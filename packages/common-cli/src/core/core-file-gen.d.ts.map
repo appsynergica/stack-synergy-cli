@@ -1,0 +1,1 @@
+{"version":3,"file":"core-file-gen.d.ts","sourceRoot":"","sources":["core-file-gen.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,OAAO,EAAC,MAAM,UAAU,CAAC;AACjC,OAAO,EAAsC,qBAAqB,EAAC,MAAM,gBAAgB,CAAC;AAG1F;;;;GAIG;AACH,qBAAa,aAAa;IAUH,OAAO,EAAE,qBAAqB;IAR1C,OAAO,EAAE,OAAO,CAAC;IAExB;;;;;OAKG;gBACgB,OAAO,EAAE,qBAAqB;IAyBjD;;;;OAIG;IACH,wBAAwB,CAAC,KAAK,EAAE,MAAM;CA0BzC"}

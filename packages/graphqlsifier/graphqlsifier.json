@@ -1,0 +1,49 @@
+{
+    "globalOptions": {
+        "sourceFilePathGlob": "src/server/entities/*.ts",
+        "outputRootPath": "src/graphql",
+        "isToSingleQuotes": false,
+        "fileNameType": "k",
+        "indentationText": "two",
+        "lineFeedKind": "n",
+        "isToUseTrailingCommas": false,
+        "isToUsePrefixAndSuffixTextForRename": false
+        },
+    "outputClasses" : [
+        {
+            "className": "{{sourceClassName}}SearchOptions",
+            "graphqlObjectType": "i",
+            "filePath": "{{outputRootPath}}/input/{{sourceClassName}}.input.ts",
+            "isEverythingOptional": true,
+            "isToAddClassValidatorDecorators": true,
+            "isToAddNestJSGraphQLDecorators": true,
+            "hasNoProperties": true
+        },
+        {
+            "className": "{{sourceClassName}}",
+            "graphqlObjectType": "o",
+            "filePath": "{{outputRootPath}}/entities/{{sourceClassName}}.ts",
+            "isEverythingOptional": false,
+            "isToAddClassValidatorDecorators": true,
+            "isToAddNestJSGraphQLDecorators": true
+        },
+        {
+            "className": "Add{{sourceClassName}}Input",
+            "graphqlObjectType": "i",
+            "filePath": "{{outputRootPath}}/input/{{sourceClassName}}.input.ts",
+            "isEverythingOptional": false,
+            "isToAddClassValidatorDecorators": true,
+            "isToAddNestJSGraphQLDecorators": true
+        },
+        {
+            "className": "Update{{sourceClassName}}Input",
+            "graphqlObjectType": "i",
+            "filePath": "{{outputRootPath}}/input/{{sourceClassName}}.input.ts",
+            "isEverythingOptional": true,
+            "isToAddClassValidatorDecorators": true,
+            "isToAddNestJSGraphQLDecorators": true
+        }
+
+
+    ]
+}

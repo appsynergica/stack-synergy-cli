@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": false,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": false,
+    "declaration": false,
+    "outDir": "dist/urbanshona/monorepo",
+    "target": "es2015",
+    "module": "commonjs",
+    "strict": true,
+    "baseUrl": "./",
+    "types": ["node"],
+    "paths": {
+      "@urbanshona/common-cli": [
+        "packages/common-cli/src/index.ts"
+      ],
+      "@urbanshona/browsifier": [
+        "packages/browsifier/src/index.ts"
+      ],
+      "@urbanshona/graphqlsifier": [
+        "packages/graphqlsifier/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "packages/browsifier/src/server",
+    "packages/browsifier/src/browser",
+    "packages/graphqlsifier/src/browser",
+    "packages/graphqlsifier/src/server",
+    "packages/graphqlsifier/src/graphql"
+
+  ],
+  "references": [
+    {"path" : "packages/common-cli/tsconfig.lib.json"},
+    {"path" : "packages/browsifier/tsconfig.app.json"},
+    {"path" : "packages/graphqlsifier/tsconfig.app.json"}
+  ]
+}

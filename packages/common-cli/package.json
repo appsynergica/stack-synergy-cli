@@ -1,0 +1,57 @@
+{
+  "name": "@urbanshona/common-cli",
+  "version": "0.0.9",
+  "author": {
+    "name": "Desmond Rgwaringesu",
+    "email": "desmondrg@gmail.com"
+  },
+  "repository": "https://github.com/urbanshona/urbanshona.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "main": "./src/index.js",
+  "types": "types/src/index.d.ts",
+  "license": "MIT",
+  "public": true,
+  "description": "A very simple library containing handy tools for building File Generation NodeJS CLIs",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "dev": "ts-node  -r tsconfig-paths/register src/index.ts -s src/server/entities -o src/browser/entities",
+    "build": "ts-node prebuild.ts && tsc --build tsconfig.lib.json",
+    "publish:local": "cd ../../dist && npm link --force",
+    "publish:global": "npm run publish:local && cd ../../dist && npm publish --access public",
+    "build-n-publish:local": "npm run build && npm run publish:local",
+    "build-n-publish:global": "npm run build && npm run publish:global",
+    "build-n-publish:local-n-test": "npm run build-n-publish:local && npm run test",
+    "test": "common-cli"
+  },
+  "keywords": [
+    "common cli library"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "lodash": "^4.17.21",
+    "rimraf": "^3.0.2",
+    "ts-morph": "^11.0.0",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5",
+    "yargs": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^16.0.0",
+    "@types/rimraf": "^3.0.1",
+    "@types/yargs": "^17.0.2",
+    "nodemon": "^2.0.9",
+    "tscpaths": "^0.0.9"
+  },
+  "funding": [
+    {
+      "type" : "patreon",
+      "url" : "https://www.patreon.com/desmondrg"
+    }
+  ]
+}

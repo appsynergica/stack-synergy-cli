@@ -1,0 +1,51 @@
+{
+  "name": "@urbanshona/urbanshona",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Desmond Rgwaringesu",
+    "email": "desmondrg@gmail.com"
+  },
+  "description": "Urban Shona is a mono-repository of tools that stream line the process of creating MyEAN Stack Web Applications",
+  "scripts": {
+    "debug-repo": "tsc --project tsconfig.json",
+    "build-repo": "y run build",
+    "build-common-cli": "yarn workspace @urbanshona/common-cli build",
+    "build-browsifier": "yarn workspace @urbanshona/browsifier build",
+    "build-graphqlsifier": "yarn workspace @urbanshona/graphqlsifier build",
+    "publish-browsifier:local": "yarn workspace @urbanshona/browsifier publish:local",
+    "publish-browsifier:global": "yarn workspace @urbanshona/browsifier publish:global",
+    "publish-graphqlsifier:local": "yarn workspace @urbanshona/graphqlsifier publish:local",
+    "publish-graphqlsifier:global": "yarn workspace @urbanshona/graphqlsifier publish:global",
+    "publish-common-cli": "yarn workspace @urbanshona/common-cli publish",
+    "dev-browsifier": "yarn workspace @urbanshona/browsifier dev",
+    "dev-graphqlsifier": "yarn workspace @urbanshona/graphqlsifier dev",
+    "test-browsifier": "browsifier -s packages/browsifier/src/server/entities -o packages/browsifier/src/browser/entities -q true",
+    "test-graphqlsifier": "graphqlsifier -s packages/graphqlsifier/src/server/entities/*.ts -o packages/graphqlsifier/src/browser/entities"
+  },
+  "keywords": [
+    "mono repository"
+  ],
+  "repository": "https://github.com/urbanshona/urbanshona.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "browsifier": "./index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "funding": [
+    {
+      "type" : "patreon",
+      "url" : "https://www.patreon.com/desmondrg"
+    }
+  ]
+}

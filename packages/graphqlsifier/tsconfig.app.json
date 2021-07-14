@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/graphqlsifier",
+    "declaration": true,
+    "declarationDir": "../../dist/graphqlsifier/types",
+    "declarationMap": true,
+    "mapRoot": "../../dist/graphqlsifier/maps",
+    "rootDir": "./src",
+    "module": "commonjs"
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/browser/**/*",
+    "src/server/**/*",
+    "src/graphql/**/*",
+    "prebuild.ts"
+  ],
+  "references": [
+    {"path" : "../common-cli/tsconfig.lib.json"}
+  ]
+}

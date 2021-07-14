@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/browsifier",
+    "declaration": true,
+    "declarationDir": "../../dist/browsifier/types",
+    "declarationMap": true,
+    "mapRoot": "../../dist/browsifier/maps",
+    "module": "commonjs",
+    "rootDir": "./src"
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/browser/**/*",
+    "src/server/**/*",
+    "prebuild.ts"
+  ],
+  "references": [
+    {"path" : "../common-cli/tsconfig.lib.json"}
+  ]
+}

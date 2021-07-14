@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/common-cli",
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "../../dist/common-cli/types",
+    "declarationMap": true,
+    "mapRoot": "../../dist/common-cli/maps",
+    "module": "commonjs"
+  },
+  "files": [
+    "src/index.ts"
+  ],
+  "include": [
+    "src/core/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/browser/**/*",
+    "src/server/**/*",
+    "prebuild.ts"
+  ]
+}
