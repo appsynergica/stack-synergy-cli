@@ -24,7 +24,12 @@
     "test-graphqlsifier": "graphqlsifier -s packages/graphqlsifier/src/server/entities/*.ts -o packages/graphqlsifier/src/browser/entities"
   },
   "keywords": [
-    "mono repository"
+    "nestjs angular full stack cli",
+    "remove decorators from TypeORM Entities",
+    "add class validator decorators to TypeORM Entities",
+    "add NestJS GraphQL \"Code First\"  decorators to TypeORM Entities",
+    "generate nestjs files from template",
+    "scaffold full stack nestjs and angular project"
   ],
   "repository": "https://github.com/urbanshona/urbanshona.git",
   "publishConfig": {
