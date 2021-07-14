@@ -398,9 +398,6 @@ export class ServerAPIFileGenerator extends FileGenerator
                     // if(index !== (array.length - 1))
                     // {
 
-                    const structure = this.addTrailingNewline(destProperty.getStructure());
-
-                    destinationClass.addProperty(structure);
 
                     //destProperty.appendWhitespace(x => x.newLine());
                     // destinationClass.addProperty(singProperty.getStructure());
@@ -421,7 +418,14 @@ export class ServerAPIFileGenerator extends FileGenerator
             });
         }
 
-        // copy the source file's properties
+        // add spaces between properties
+
+        const addedProperties = destinationClass.getProperties();
+
+        // append a newline to every added property, except the last one which is at the end of the class
+        addedProperties.slice(0, -1).forEach(x => x.appendWhitespace(y => {
+            y.newLine();
+        }));
 
     }
 
@@ -616,4 +620,10 @@ export class ServerAPIFileGenerator extends FileGenerator
     {
         return Mustache.render(filePathTemplate, {outputRootPath: this.config.globalOptions.outputRootPath, sourceClassName: this.toStandardFileNamePrefix(sourceClassName)});
     }
+
+
+    // private appendNewLine(node: Node)
+    // {
+    //     node.appendWhitespace(writer => writer.newLine());
+    // }
 }
