@@ -288,10 +288,7 @@ export class ServerAPIFileGenerator extends FileGenerator
 
                         }else if(propType.isArray()) // Array Types
                         {
-                            destProperty.addDecorator({
-                                name: "IsArray",
-                                arguments: []
-                            });
+
 
                             if(propType.isString())
                             {
