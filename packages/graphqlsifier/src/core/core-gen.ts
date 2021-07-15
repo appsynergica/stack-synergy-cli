@@ -30,3 +30,12 @@ export interface IDecoratorOptions
 
 }
 
+export const knownPrimitiveTypes = {
+
+    integers: ['int'],
+    strings: ['varchar', 'text', 'decimal'],
+    dates: ['datetime'],
+    booleans: ['tinyint'],
+    floats: ['']
+
+}

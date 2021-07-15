@@ -17,7 +17,7 @@ export class City {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
-  @Column("varchar", { name: "name", unique: true, length: 45 })
+  @Column("varchar", {type: "Desmond ati mhoro", name: "name", unique: true, length: 45 })
   name: string;
 
   @Column("int", { name: "province_id" })

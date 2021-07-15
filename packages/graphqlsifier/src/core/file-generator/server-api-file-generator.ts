@@ -2,6 +2,7 @@ import {
     GraphQLObjectType,
     IDecoratorOptions,
     IGraphqlsifierConfig,
+    knownPrimitiveTypes,
 } from '../core-gen';
 import {
     ClassDeclaration,
@@ -9,7 +10,9 @@ import {
     PropertyDeclaration,
     SourceFile,
     Type,
-    Symbol, Structure
+    Symbol, Structure, Decorator,
+    StringLiteral,
+    ObjectLiteralExpression
 } from 'ts-morph';
 import Mustache from 'mustache';
 import _ from 'lodash';
@@ -23,6 +26,23 @@ export class GenSymbolInfo {
 
     constructor(public path = '',
                 public typeName = '',
+                public isArray = false) {}
+}
+
+export enum PrimitiveTypeName
+{
+    Int = 'Int',
+    Float = 'Float',
+    String = 'String',
+    ID = 'ID',
+    Bool = 'BOOL',
+    Date = 'Date',
+    NoType = 'NoType'
+}
+
+export class PrimitiveTypeInfo {
+
+    constructor(public typeName = PrimitiveTypeName.NoType,
                 public isArray = false) {}
 }
 
@@ -186,11 +206,22 @@ export class ServerAPIFileGenerator extends FileGenerator
                     //console.log('\n\nProperty : ' + JSON.stringify(singProperty.getStructure(), null, 2));
                     //console.log('\n\nDecorator : ' + JSON.stringify(singDecorator.getStructure(), null, 2));
 
-                    if(singDecorator.getName() === 'PrimaryGeneratedColumn')
+
+                    // singDecorator.getArguments().forEach( singDecoratorArg => console.log(singDecoratorArg));
+
+
+                        const propType = singProperty.getType();
+
+                        const propPrimitiveInfo = this.getPrimitiveTypeInfo(singDecorator);
+
+                        const propReferenceInfo = this.getReferenceTypeInfo(propType, options);
+
+                    // TODO: Confirm whether MongoDB ObjectIDs are ALWAYS numberic & fix the if else logic accordingly
+                    if(singDecorator.getName() === 'PrimaryGeneratedColumn' || singDecorator.getName() === 'PrimaryColumn' || singDecorator.getName() === 'ObjectIdColumn') // PRIMARY 
                     {
                         this.addPropertyDecorator(destProperty,
                             false,
-                            'IsInt',
+                            propType.isString() ? 'IsString' : 'IsInt',
                             [],
                             'ID',
                             importDeclarationClassValidator,
@@ -198,11 +229,23 @@ export class ServerAPIFileGenerator extends FileGenerator
                             importDelcarationClassTransformer,
                             options);
 
-                    }else{
+                    }else if(singDecorator.getName() === 'CreateDateColumn' || singDecorator.getName() === 'UpdateDateColumn' || singDecorator.getName() === 'DeleteDateColumn') // DATE
+                    {
+                        this.addPropertyDecorator(destProperty,
+                            false,
+                            'IsDate',
+                            [],
+                            'Date',
+                            importDeclarationClassValidator,
+                            importDeclarationNestGraphQL,
+                            importDelcarationClassTransformer,
+                            options);
 
-                        const propType = singProperty.getType();
+                    }
 
-                        const propInfo = this.getTypeInfo(propType, options);
+                    else{
+
+                        
 
                         if(options.isToAddClassValidatorDecorators && (options.isEverythingOptional || propType.isNullable()))
                         {
@@ -216,7 +259,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                         if(!propType.isArray()) // Non Array Types
                         {
 
-                            if(propType.isString())
+                            if(propType.isString() || propPrimitiveInfo.typeName === PrimitiveTypeName.String)
                             {
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
                                     'IsString',
@@ -227,7 +270,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     importDelcarationClassTransformer,
                                     options);
 
-                            }else if(propType.isBoolean())
+                            }else if(propType.isBoolean() || propPrimitiveInfo.typeName === PrimitiveTypeName.Bool)
                             {
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
                                     'IsBoolean',
@@ -239,25 +282,25 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     options);
 
                                 // TODO: Seperate Int from Float
-                            }else if(propType.isNumber()) // Int
+                            }else if((propType.isNumber() && propPrimitiveInfo.typeName === PrimitiveTypeName.Int) || propPrimitiveInfo.typeName === PrimitiveTypeName.Int) // Int
                             {
 
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
-                                    'IsNumber',
+                                    'IsInt',
                                     [],
-                                    'Float',
+                                    'Int',
                                     importDeclarationClassValidator,
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
                                     options);
 
                                 // TODO: Seperate Int from Float
-                            }else if(propType.isNumber()) // Float
+                            }else if(singDecorator.getName() === 'VersionColumn' || (propType.isNumber() && propPrimitiveInfo.typeName === PrimitiveTypeName.Float) || propPrimitiveInfo.typeName === PrimitiveTypeName.Float) // Float
                             {
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
-                                    'IsInt',
+                                    'IsNumber',
                                     [],
-                                    'Int',
+                                    'Float',
                                     importDeclarationClassValidator,
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
@@ -268,14 +311,14 @@ export class ServerAPIFileGenerator extends FileGenerator
                                 // add custom import
 
 
-                                const importDeclarationCustomType = this.addImportDeclaration(destinationFile, propInfo.path);
+                                const importDeclarationCustomType = this.addImportDeclaration(destinationFile, propReferenceInfo.path);
 
-                                this.addNamedImport(importDeclarationCustomType, propInfo.typeName);
+                                this.addNamedImport(importDeclarationCustomType, propReferenceInfo.typeName);
 
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
                                     null,
                                     null,
-                                    propInfo.typeName,
+                                    propReferenceInfo.typeName,
                                     importDeclarationClassValidator,
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
@@ -313,46 +356,21 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     options,
                                     true);
 
-                                // TODO: Seperate Int from Float
-                            }else if(propType.isNumber()) // Int
-                            {
-
-                                this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
-                                    'IsNumber',
-                                    [`{each: true}`],
-                                    'Float',
-                                    importDeclarationClassValidator,
-                                    importDeclarationNestGraphQL,
-                                    importDelcarationClassTransformer,
-                                    options);
-
-                                // TODO: Seperate Int from Float
-                            }else if(propType.isNumber()) // Float
-                            {
-                                this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
-                                    'IsInt',
-                                    [],
-                                    'Int',
-                                    importDeclarationClassValidator,
-                                    importDeclarationNestGraphQL,
-                                    importDelcarationClassTransformer,
-                                    options,
-                                    true);
                             }else if(propType.isObject()) // Object
                             {
 
                                 // add custom import
 
 
-                                const importDeclarationCustomType = this.addImportDeclaration(destinationFile, propInfo.path);
+                                const importDeclarationCustomType = this.addImportDeclaration(destinationFile, propReferenceInfo.path);
 
-                                this.addNamedImport(importDeclarationCustomType, propInfo.typeName);
+                                this.addNamedImport(importDeclarationCustomType, propReferenceInfo.typeName);
 
                                 // TODO: Add Actual Custom Object Field Type
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
                                     null,
                                     null,
-                                    propInfo.typeName,
+                                    propReferenceInfo.typeName,
                                     importDeclarationClassValidator,
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
@@ -366,50 +384,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                     }
 
 
-
-                    //  if(singDecorator.getName() === 'Column')
-                    // {
-                    //     // singDecorator.getArguments().forEach( singDecoratorArg => console.log(singDecoratorArg));
-                    //
-                    // }else if(singDecorator.getName() === 'ManyToOne')
-                    // {
-                    //
-                    // }else if(singDecorator.getName() === 'JoinColumn')
-                    // {
-                    //
-                    // }else if(singDecorator.getName() === 'OneToMany')
-                    // {
-                    //
-                    // }
-
-                    // add a property with a new line except for the last property
-
-
-                    // finally add the source file decorators
-                    destProperty.addDecorators(singProperty.getDecorators().map(x => x.getStructure()));
-
-
-                    // console.log(index);
-                    // console.log(array);
-
-                    // if(index !== (array.length - 1))
-                    // {
-
-
-                    //destProperty.appendWhitespace(x => x.newLine());
-                    // destinationClass.addProperty(singProperty.getStructure());
-
-                    // }else{
-                    //     destinationClass.addProperty(singProperty.getStructure());
-                    // }
-
-
-
                 });
-
-
-
-
 
 
             });
@@ -557,26 +532,99 @@ export class ServerAPIFileGenerator extends FileGenerator
     }
 
 
-    getInfoFromSymbol(symbol: Symbol, options: IDecoratorOptions):  GenSymbolInfo
+    setPrimitiveType(obj: PrimitiveTypeInfo, probingRawTypeName: string)
     {
-        let obj = new GenSymbolInfo();
+        if( knownPrimitiveTypes.integers.includes(probingRawTypeName?.toLowerCase())) // INT
+        {
+            obj.typeName = PrimitiveTypeName.Int;
+        }
+        else if( knownPrimitiveTypes.floats.includes(probingRawTypeName?.toLowerCase())) // FLOAT
+        {
+            obj.typeName = PrimitiveTypeName.Float;
+        }
+        else if( knownPrimitiveTypes.integers.includes(probingRawTypeName?.toLowerCase())) // STRING
+        {
+            obj.typeName = PrimitiveTypeName.String;
+        }
+        else if( knownPrimitiveTypes.booleans.includes(probingRawTypeName?.toLowerCase())) // BOOLEAN
+        {
+            obj.typeName = PrimitiveTypeName.Bool;
 
-        obj.typeName = this.renderedClassName(symbol?.getName(), options);
-
-        // symbol?.getDeclarations()?.map(d => {
-        //     obj.path = this.renderedClassPath(d.getSourceFile().getFilePath(), options);
-        // });
-
-        obj.path = this.renderedClassPath(obj.typeName, options.filePath);
-
+        }
+        else if( knownPrimitiveTypes.dates.includes(probingRawTypeName?.toLowerCase())) // DATES
+        {
+            obj.typeName = PrimitiveTypeName.Date;
+        }
+    }
 
 
+    getPrimitiveTypeInfo(decorator: Decorator): PrimitiveTypeInfo
+    {
+        let obj = new PrimitiveTypeInfo();
+
+        if(decorator.getName() === 'Column')
+        {
+            decorator.getArguments().forEach(singArg => {
+
+
+               
+               //String Literal Expression
+
+              if(singArg instanceof StringLiteral && singArg?.getLiteralValue())
+              {
+
+                
+                const stringValue = singArg?.getLiteralValue();
+
+                this.setPrimitiveType(obj, stringValue);
+
+               // console.log(`String value : ${stringValue}`);
+
+
+              }
+
+            //Object Literal Expression
+
+            else if(singArg instanceof ObjectLiteralExpression && singArg?.getProperties())
+            {
+                const targetLiteralPropKey = 'type';
+
+                const typeORMTypeArg = singArg.getProperty(targetLiteralPropKey);
+
+                
+                if(typeORMTypeArg)
+                {
+                    // console.log(`typeorm type arg found : `);
+
+
+                    // get text returns the property as "type: int" therefore replace and trim accordingly
+                    const filteredLiteralValue = typeORMTypeArg.getText()?.replace(targetLiteralPropKey, '')?.replace(':', '')?.trim();
+
+                   // console.log(filteredLiteralValue);
+
+                     this.setPrimitiveType(obj, filteredLiteralValue);
+
+
+                }
+
+
+            }
+
+
+            });
+
+           
+        }
+
+        obj.typeName = PrimitiveTypeName.NoType;
 
         return obj;
     }
 
+
+
     // @ts-ignore
-    getTypeInfo(propType: Type, options: IDecoratorOptions): GenSymbolInfo
+    getReferenceTypeInfo(propType: Type, options: IDecoratorOptions): GenSymbolInfo
     {
 
 
@@ -591,6 +639,24 @@ export class ServerAPIFileGenerator extends FileGenerator
         }
 
         // console.log('pep 122' + JSON.stringify(obj, null, 2));
+
+        return obj;
+    }
+
+        getInfoFromSymbol(symbol: Symbol, options: IDecoratorOptions):  GenSymbolInfo
+    {
+        let obj = new GenSymbolInfo();
+
+        obj.typeName = this.renderedClassName(symbol?.getName(), options);
+
+        // symbol?.getDeclarations()?.map(d => {
+        //     obj.path = this.renderedClassPath(d.getSourceFile().getFilePath(), options);
+        // });
+
+        obj.path = this.renderedClassPath(obj.typeName, options.filePath);
+
+
+
 
         return obj;
     }
