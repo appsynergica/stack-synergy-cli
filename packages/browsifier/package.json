@@ -20,7 +20,7 @@
     "remove decorators",
     "remove decorators from TypeORM Entities"
   ],
-  "repository": "https://github.com/urbanshona/urbanshona.git",
+  "repository": "https://github.com/urbanshona/urbanshona-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },

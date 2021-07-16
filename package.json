@@ -31,7 +31,7 @@
     "generate nestjs files from template",
     "scaffold full stack nestjs and angular project"
   ],
-  "repository": "https://github.com/urbanshona/urbanshona.git",
+  "repository": "https://github.com/urbanshona/urbanshona-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
