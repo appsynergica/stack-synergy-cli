@@ -1,5 +1,5 @@
 {
-  "name": "@urbanshona/urbanshona",
+  "name": "@urbanshona/stack-synergy-cli",
   "version": "0.0.1",
   "private": true,
   "author": {
@@ -24,14 +24,27 @@
     "test-graphqlsifier": "graphqlsifier -s packages/graphqlsifier/src/server/entities/*.ts -o packages/graphqlsifier/src/browser/entities"
   },
   "keywords": [
-    "nestjs angular full stack cli",
+    "cli",
+    "nestjs",
+    "angular",
+    "class validator",
+    "TypeORM",
+    "Graphql",
+    "full stack",
+    "command line interface",
+    "remove decorators",
+    "file generator",
+    "nestjs file generator",
+    "angular file generator",
     "remove decorators from TypeORM Entities",
+    "add decorators",
+    "add class validator decorators",
     "add class validator decorators to TypeORM Entities",
     "add NestJS GraphQL \"Code First\"  decorators to TypeORM Entities",
     "generate nestjs files from template",
     "scaffold full stack nestjs and angular project"
   ],
-  "repository": "https://github.com/urbanshona/urbanshona-cli.git",
+  "repository": "https://github.com/urbanshona/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },

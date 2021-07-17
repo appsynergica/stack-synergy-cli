@@ -5,7 +5,7 @@
     "name": "Desmond Rgwaringesu",
     "email": "desmondrg@gmail.com"
   },
-  "repository": "https://github.com/urbanshona/urbanshona-cli.git",
+  "repository": "https://github.com/urbanshona/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -19,7 +19,7 @@
     "type-check:watch": "npm run type-check -- --watch",
     "dev": "ts-node  -r tsconfig-paths/register src/index.ts -s src/server/entities -o src/browser/entities",
     "build": "ts-node prebuild.ts && tsc --build tsconfig.lib.json",
-    "publish:local": "cd ../../dist && npm link --force",
+    "publish:local": "cd ../../dist/common-cli && npm link --force",
     "publish:global": "npm run publish:local && cd ../../dist && npm publish --access public",
     "build-n-publish:local": "npm run build && npm run publish:local",
     "build-n-publish:global": "npm run build && npm run publish:global",

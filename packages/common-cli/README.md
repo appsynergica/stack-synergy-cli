@@ -1,10 +1,13 @@
-# UrbanShona Common CLI
+# Urban Shona Common CLI
 
 <span class="badge-patreon">
 <a href="https://patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>
 </span>
+<span class="badge-buymeacoffee">
+<a href="https://ko-fi.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
+</span>     
 
-![GitHub stars](https://img.shields.io/github/stars/urbanshona/urbanshona?style=social) ![GitHub forks](https://img.shields.io/github/forks/urbanshona/urbanshona?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/urbanshona/urbanshona?style=social)          ![GitHub followers](https://img.shields.io/github/followers/urbanshona?style=social)
+![GitHub stars](https://img.shields.io/github/stars/urbanshona/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/urbanshona/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/urbanshona/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/urbanshona?style=social)
 
 
 > A very simple library containing handy tools for building File Generation NodeJS CLIs
@@ -21,3 +24,6 @@ npm i @urbanshona/common-cli
 <span class="badge-patreon">
 <a href="https://patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>
 </span>
+<span class="badge-buymeacoffee">
+<a href="https://ko-fi.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
+</span>     
