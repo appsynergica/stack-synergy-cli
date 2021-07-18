@@ -647,13 +647,15 @@ export class ServerAPIFileGenerator extends FileGenerator
     {
         let obj = new GenSymbolInfo();
 
-        obj.typeName = this.renderedClassName(symbol?.getName(), options);
+        const sourcePathName = symbol?.getName();
+        obj.typeName = this.renderedClassName(sourcePathName, options);
 
         // symbol?.getDeclarations()?.map(d => {
         //     obj.path = this.renderedClassPath(d.getSourceFile().getFilePath(), options);
         // });
 
-        obj.path = this.renderedClassPath(obj.typeName, options.filePath);
+        // format of path "./fileName";
+        obj.path = `./${this.renderedClassPath(sourcePathName, options.filePath)?.split('/')?.pop()?.replace('.ts', '')}`;
 
 
 
