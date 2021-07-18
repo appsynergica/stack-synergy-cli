@@ -1,0 +1,13 @@
+{
+    "globalOptions": {
+        "sourceFilePathGlob": "src/server/entities/*.ts",
+        "outputRootPath": "src/graphql",
+        "isToSingleQuotes": false,
+        "fileNameType": "k",
+        "indentationText": "two",
+        "lineFeedKind": "n",
+        "isToUseTrailingCommas": false,
+        "isToUsePrefixAndSuffixTextForRename": false
+        },
+    "outputClasses" : []
+}

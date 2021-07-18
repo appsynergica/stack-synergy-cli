@@ -1,21 +1,21 @@
 {
-  "name": "@urbanshona/graphqlsifier",
+  "name": "@urbanshona/nestifier",
   "version": "0.0.1",
   "author": {
     "name": "Desmond Rgwaringesu",
     "email": "desmondrg@gmail.com"
   },
-  "description": "A Command Line App for adding “code first” nestjs graphql decorators and or class validator decorators to TypeORM entities.",
+  "description": "A Command Line Interface for generating NestJS Feature Modules from a set of templates in a specified folder. The generated NestJS Feature Module folder will contain a service, service.spec, module, controller or controller.spec fully populated with broiler plate code that matches the logic of other similar feature modules located in the application.",
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "dev": "ts-node  -r tsconfig-paths/register src/cli.ts -s src/server/entities/*.ts -o src/graphql/entities",
-    "build": "ts-node prebuild.ts && tsc --build tsconfig.app.json && tscpaths -p tsconfig.app.json -s ./ -o ../../dist/graphqlsifier",
-    "publish:local": "cd ../../dist/graphqlsifier && npm link --force",
+    "build": "ts-node prebuild.ts && tsc --build tsconfig.app.json && tscpaths -p tsconfig.app.json -s ./ -o ../../dist/nestifier",
+    "publish:local": "cd ../../dist/nestifier && npm link --force",
     "publish:global": "yarn run publish:local && cd ../../dist && npm publish",
     "build-n-publish:local": "yarn run build && yarn run publish:local",
     "build-n-publish:local-n-test": "yarn run build-n-publish:local && yarn run test",
-    "test": "graphqlsifier"
+    "test": "nestifier"
   },
   "keywords": [
     "add decorators",
