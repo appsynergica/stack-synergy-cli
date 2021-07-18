@@ -18,6 +18,9 @@
     "prebuild.ts"
   ],
   "references": [
-    {"path" : "../common-cli/tsconfig.lib.json"}
+    {"path" : "../common-cli/tsconfig.lib.json"},
+    {"path" : "../browsifier/tsconfig.lib.json"},
+    {"path" : "../graphqlsifier/tsconfig.lib.json"},
+    {"path" : "../stack-synergy/tsconfig.lib.json"}
   ]
 }

@@ -35,12 +35,20 @@
     "packages/browsifier/src/browser",
     "packages/graphqlsifier/src/browser",
     "packages/graphqlsifier/src/server",
-    "packages/graphqlsifier/src/graphql"
-
+    "packages/graphqlsifier/src/graphql",
+    "packages/nestifier/src/browser",
+    "packages/nestifier/src/server",
+    "packages/nestifier/src/graphql",
+    "packages/stack-synergy/src/browser",
+    "packages/stack-synergy/src/server",
+    "packages/stack-synergy/src/graphql"
   ],
   "references": [
     {"path" : "packages/common-cli/tsconfig.lib.json"},
     {"path" : "packages/browsifier/tsconfig.app.json"},
-    {"path" : "packages/graphqlsifier/tsconfig.app.json"}
+    {"path" : "packages/graphqlsifier/tsconfig.app.json"},
+    {"path" : "packages/nestifier/tsconfig.app.json"},
+    {"path" : "packages/stack-synergy/tsconfig.app.json"}
+
   ]
 }
