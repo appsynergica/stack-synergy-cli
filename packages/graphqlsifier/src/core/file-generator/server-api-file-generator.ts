@@ -542,7 +542,7 @@ export class ServerAPIFileGenerator extends FileGenerator
         {
             obj.typeName = PrimitiveTypeName.Float;
         }
-        else if( knownPrimitiveTypes.integers.includes(probingRawTypeName?.toLowerCase())) // STRING
+        else if( knownPrimitiveTypes.strings.includes(probingRawTypeName?.toLowerCase())) // STRING
         {
             obj.typeName = PrimitiveTypeName.String;
         }
@@ -555,12 +555,16 @@ export class ServerAPIFileGenerator extends FileGenerator
         {
             obj.typeName = PrimitiveTypeName.Date;
         }
+
+        return obj.typeName !== PrimitiveTypeName.NoType;
     }
 
 
     getPrimitiveTypeInfo(decorator: Decorator): PrimitiveTypeInfo
     {
         let obj = new PrimitiveTypeInfo();
+
+        let hasFoundPrimitiveType = false;
 
         if(decorator.getName() === 'Column')
         {
@@ -576,9 +580,9 @@ export class ServerAPIFileGenerator extends FileGenerator
                 
                 const stringValue = singArg?.getLiteralValue();
 
-                this.setPrimitiveType(obj, stringValue);
+                hasFoundPrimitiveType = this.setPrimitiveType(obj, stringValue);
 
-               // console.log(`String value : ${stringValue}`);
+               // console.log(`String value : ${stringValue} hasFoundPrimitiveType: ${hasFoundPrimitiveType} ${JSON.stringify(obj, null, 2)}`);
 
 
               }
@@ -592,7 +596,9 @@ export class ServerAPIFileGenerator extends FileGenerator
                 const typeORMTypeArg = singArg.getProperty(targetLiteralPropKey);
 
                 
-                if(typeORMTypeArg)
+                // only search for the type in the second decorator args parameter if 
+                // the type hasnt been found in the first args
+                if(typeORMTypeArg && !hasFoundPrimitiveType)
                 {
                     // console.log(`typeorm type arg found : `);
 
@@ -602,7 +608,7 @@ export class ServerAPIFileGenerator extends FileGenerator
 
                    // console.log(filteredLiteralValue);
 
-                     this.setPrimitiveType(obj, filteredLiteralValue);
+                     hasFoundPrimitiveType = this.setPrimitiveType(obj, filteredLiteralValue);
 
 
                 }
@@ -616,7 +622,6 @@ export class ServerAPIFileGenerator extends FileGenerator
            
         }
 
-        obj.typeName = PrimitiveTypeName.NoType;
 
         return obj;
     }
