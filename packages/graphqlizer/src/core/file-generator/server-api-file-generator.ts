@@ -66,6 +66,8 @@ export class ServerAPIFileGenerator extends FileGenerator
         const outputFile = this.project.createSourceFile(pathOfFile, {
         }, { overwrite: true });
 
+
+        // TODO: copy typeorm imports under a condition of whether to add typeorm decorators or not
         // copy typeorm imports
         const sourceImportDeclarationTypeORM = sourceFile.getImportDeclaration(x => x.getModuleSpecifierValue() === 'typeorm');
 
@@ -194,6 +196,7 @@ export class ServerAPIFileGenerator extends FileGenerator
 
                 const singPropertyStruct = {... singProperty.getStructure()};
 
+                // TODO: Add TypeORM Decorators at the end under a condition of whether to add typeorm decorators or not
                 delete singPropertyStruct.decorators;
 
                 // create a corresponding property without source property decorators
