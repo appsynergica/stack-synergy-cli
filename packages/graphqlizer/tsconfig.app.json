@@ -1,11 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/graphqlsifier",
+    "outDir": "../../dist/graphqlizer",
     "declaration": true,
-    "declarationDir": "../../dist/graphqlsifier/types",
+    "declarationDir": "../../dist/graphqlizer/types",
     "declarationMap": true,
-    "mapRoot": "../../dist/graphqlsifier/maps",
+    "mapRoot": "../../dist/graphqlizer/maps",
     "rootDir": "./src",
     "module": "commonjs"
   },

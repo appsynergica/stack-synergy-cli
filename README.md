@@ -19,7 +19,7 @@ Stack Synergy CLI is a mono-repository of tools that aim to stream line the proc
               
 - [Browsifier](https://github.com/urbanshona/stack-synergy-cli/tree/master/packages/browsifier) :  A Command Line Application for generating Typescript classes without decorators from TypeORM Entity definitions. This solves a problem where TypeORM Entities cannot be imported into browser apps Like Angular Applications because they use webpack which bundles things and TypeORM doesn't work well with bundling.          
           
-- [Graphqlsifier](https://github.com/urbanshona/stack-synergy-cli/tree/master/packages/graphqlsifier) : A Command Line App for adding "code first" nestjs graphql decorators and or class validator decorators to TypeORM entities.             
+- [Graphqlizer](https://github.com/urbanshona/stack-synergy-cli/tree/master/packages/graphqlizer) : A Command Line App for adding "code first" nestjs graphql decorators and or class validator decorators to TypeORM entities.             
            
 - [Nestifier](https://github.com/urbanshona/stack-synergy-cli/tree/master/packages/nestifier): A Command Line Interface for generating NestJS Feature Modules from a set of templates in a specified folder. The generated NestJS Feature Module folder will contain a service, service.spec, module, controller or controller.spec fully populated with broiler plate code that matches the logic of other similar feature modules located in the application.            
           

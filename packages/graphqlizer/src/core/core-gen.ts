@@ -12,7 +12,7 @@ export interface IServerApiFileGeneratorOptions extends IFileGeneratorOptions
     sourceFilePathGlob: string,
     outputRootPath: string,
 }
-export interface IGraphqlsifierConfig
+export interface IGraphqlizerConfig
 {
     globalOptions: IServerApiFileGeneratorOptions;
     outputClasses: IDecoratorOptions[];

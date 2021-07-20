@@ -37,7 +37,7 @@
   "dependencies": {
     "@urbanshona/common-cli": "^0.0.9",
     "@urbanshona/browsifier": "^0.0.1",
-    "@urbanshona/graphqlsifier": "^0.0.1",
+    "@urbanshona/graphqlizer": "^0.0.1",
     "@urbanshona/nestifier": "^0.0.1",
     "chalk": "^4.1.1",
     "figlet": "^1.5.0",

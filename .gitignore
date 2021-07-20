@@ -89,8 +89,8 @@ yarn-error.log*
 /packages/common-cli/src/core/core-objects.js
 /packages/common-cli/src/index.d.ts
 /packages/common-cli/src/index.js
-/packages/graphqlsifier/public-api.d.ts
-/packages/graphqlsifier/public-api.js
+/packages/graphqlizer/public-api.d.ts
+/packages/graphqlizer/public-api.js
 
 ### Node Logs###
 logs

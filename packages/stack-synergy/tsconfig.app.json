@@ -1,11 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/graphqlsifier",
+    "outDir": "../../dist/graphqlizer",
     "declaration": true,
-    "declarationDir": "../../dist/graphqlsifier/types",
+    "declarationDir": "../../dist/graphqlizer/types",
     "declarationMap": true,
-    "mapRoot": "../../dist/graphqlsifier/maps",
+    "mapRoot": "../../dist/graphqlizer/maps",
     "rootDir": "./src",
     "module": "commonjs"
   },
@@ -20,7 +20,7 @@
   "references": [
     {"path" : "../common-cli/tsconfig.lib.json"},
     {"path" : "../browsifier/tsconfig.lib.json"},
-    {"path" : "../graphqlsifier/tsconfig.lib.json"},
+    {"path" : "../graphqlizer/tsconfig.lib.json"},
     {"path" : "../stack-synergy/tsconfig.lib.json"}
   ]
 }

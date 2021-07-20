@@ -1,4 +1,4 @@
-# Urban Shona Graphqlsifier
+# Urban Shona Graphqlizer
 
 <span class="badge-patreon">
 <a href="https://patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>
@@ -20,13 +20,13 @@
 ## Installation
 
 ```shell
-npm i @urbanshona/graphqlsifier
+npm i @urbanshona/graphqlizer
 ```
 
 ## Usage
 
 ```shell
-graphqlsifier -s [Input] -o [Output] -q [Quote]
+graphqlizer -s [Input] -o [Output] -q [Quote]
 
 Options:
  --help                Show help
@@ -58,7 +58,7 @@ Options:
 
 ```shell
 
-e.g graphqlsifier -s server/entities -o browser/entities -q true
+e.g graphqlizer -s server/entities -o browser/entities -q true
 
 ```
 

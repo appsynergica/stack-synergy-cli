@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import yargs from 'yargs';
 import {logger,FileGenerator, fxnReadJSON} from '@urbanshona/common-cli';
-import {IGraphqlsifierConfig} from './core/core-gen';
+import {IGraphqlizerConfig} from './core/core-gen';
 import {ServerAPIFileGenerator} from './core/file-generator/server-api-file-generator';
-logger.context = 'graphqlsifier';
+logger.context = 'graphqlizer';
 
 const options: any = yargs.options({
     s: {
@@ -63,7 +63,7 @@ const options: any = yargs.options({
         type: 'boolean'
     },
 
-    // Begin Graphqlsifier Options
+    // Begin Graphqlizer Options
     v: {
         alias: 'validator',
         demandOption: true,
@@ -102,14 +102,14 @@ const options: any = yargs.options({
     P: {
         alias: 'project',
         demandOption: false,
-        default: './graphqlsifier.json',
+        default: './graphqlizer.json',
         describe: 'The Config file to use instead of all the other command line options',
         type: 'boolean'
     },
 
 }).argv;
 
-let gqlsifierConfig: IGraphqlsifierConfig;
+let gqlsifierConfig: IGraphqlizerConfig;
 
 if(options.project)
 {
@@ -119,7 +119,7 @@ if(options.project)
     {
         gqlsifierConfig = {
 
-            // Graphqlsifier Options : Base Class Options
+            // Graphqlizer Options : Base Class Options
             globalOptions: {
                 sourceFilePathGlob: options.source,
                 outputRootPath: options.output,
@@ -142,7 +142,7 @@ if(options.project)
                 }
             ]
 
-            // Graphqlsifier Options : IDecorator Options
+            // Graphqlizer Options : IDecorator Options
 
 
         };

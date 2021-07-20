@@ -1,5 +1,5 @@
 {
-  "name": "@urbanshona/graphqlsifier",
+  "name": "@urbanshona/graphqlizer",
   "version": "0.0.1",
   "author": {
     "name": "Desmond Rgwaringesu",
@@ -10,12 +10,12 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "dev": "ts-node  -r tsconfig-paths/register src/cli.ts -s src/server/entities/*.ts -o src/graphql/entities",
-    "build": "ts-node prebuild.ts && tsc --build tsconfig.app.json && tscpaths -p tsconfig.app.json -s ./ -o ../../dist/graphqlsifier",
-    "publish:local": "cd ../../dist/graphqlsifier && npm link --force",
+    "build": "ts-node prebuild.ts && tsc --build tsconfig.app.json && tscpaths -p tsconfig.app.json -s ./ -o ../../dist/graphqlizer",
+    "publish:local": "cd ../../dist/graphqlizer && npm link --force",
     "publish:global": "yarn run publish:local && cd ../../dist && npm publish",
     "build-n-publish:local": "yarn run build && yarn run publish:local",
     "build-n-publish:local-n-test": "yarn run build-n-publish:local && yarn run test",
-    "test": "graphqlsifier"
+    "test": "graphqlizer"
   },
   "keywords": [
     "add decorators",

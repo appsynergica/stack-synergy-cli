@@ -2,7 +2,7 @@ import * as fs from 'fs';
 
 import rimraf  from  'rimraf';
 
-const distDir = "../../dist/graphqlsifier";
+const distDir = "../../dist/graphqlizer";
 rimraf(distDir,  () =>{
 
     fs.mkdirSync(distDir, {recursive: true});

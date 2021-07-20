@@ -23,8 +23,8 @@
       "@urbanshona/browsifier": [
         "packages/browsifier/src/index.ts"
       ],
-      "@urbanshona/graphqlsifier": [
-        "packages/graphqlsifier/src/index.ts"
+      "@urbanshona/graphqlizer": [
+        "packages/graphqlizer/src/index.ts"
       ]
     }
   },
@@ -33,9 +33,9 @@
     "dist",
     "packages/browsifier/src/server",
     "packages/browsifier/src/browser",
-    "packages/graphqlsifier/src/browser",
-    "packages/graphqlsifier/src/server",
-    "packages/graphqlsifier/src/graphql",
+    "packages/graphqlizer/src/browser",
+    "packages/graphqlizer/src/server",
+    "packages/graphqlizer/src/graphql",
     "packages/nestifier/src/browser",
     "packages/nestifier/src/server",
     "packages/nestifier/src/graphql",
@@ -46,7 +46,7 @@
   "references": [
     {"path" : "packages/common-cli/tsconfig.lib.json"},
     {"path" : "packages/browsifier/tsconfig.app.json"},
-    {"path" : "packages/graphqlsifier/tsconfig.app.json"},
+    {"path" : "packages/graphqlizer/tsconfig.app.json"},
     {"path" : "packages/nestifier/tsconfig.app.json"},
     {"path" : "packages/stack-synergy/tsconfig.app.json"}
 

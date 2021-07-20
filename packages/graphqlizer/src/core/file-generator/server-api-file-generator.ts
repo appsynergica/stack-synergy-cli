@@ -1,7 +1,7 @@
 import {
     GraphQLObjectType,
     IDecoratorOptions,
-    IGraphqlsifierConfig,
+    IGraphqlizerConfig,
     knownPrimitiveTypes,
 } from '../core-gen';
 import {
@@ -17,7 +17,7 @@ import {
 import Mustache from 'mustache';
 import _ from 'lodash';
 import {FileGenerator, logger} from '@urbanshona/common-cli';
-logger.context = 'Graphqlsifier';
+logger.context = 'Graphqlizer';
 
 // disable html escaping for Mustache
 Mustache.escape = (value) => value;
@@ -50,7 +50,7 @@ export class PrimitiveTypeInfo {
 export class ServerAPIFileGenerator extends FileGenerator
 {
 
-    constructor(public config: IGraphqlsifierConfig)
+    constructor(public config: IGraphqlizerConfig)
     {
         super(config.globalOptions);
 

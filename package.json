@@ -12,16 +12,16 @@
     "build-repo": "y run build",
     "build-common-cli": "yarn workspace @urbanshona/common-cli build",
     "build-browsifier": "yarn workspace @urbanshona/browsifier build",
-    "build-graphqlsifier": "yarn workspace @urbanshona/graphqlsifier build",
+    "build-graphqlizer": "yarn workspace @urbanshona/graphqlizer build",
     "publish-browsifier:local": "yarn workspace @urbanshona/browsifier publish:local",
     "publish-browsifier:global": "yarn workspace @urbanshona/browsifier publish:global",
-    "publish-graphqlsifier:local": "yarn workspace @urbanshona/graphqlsifier publish:local",
-    "publish-graphqlsifier:global": "yarn workspace @urbanshona/graphqlsifier publish:global",
+    "publish-graphqlizer:local": "yarn workspace @urbanshona/graphqlizer publish:local",
+    "publish-graphqlizer:global": "yarn workspace @urbanshona/graphqlizer publish:global",
     "publish-common-cli": "yarn workspace @urbanshona/common-cli publish",
     "dev-browsifier": "yarn workspace @urbanshona/browsifier dev",
-    "dev-graphqlsifier": "yarn workspace @urbanshona/graphqlsifier dev",
+    "dev-graphqlizer": "yarn workspace @urbanshona/graphqlizer dev",
     "test-browsifier": "browsifier -s packages/browsifier/src/server/entities -o packages/browsifier/src/browser/entities -q true",
-    "test-graphqlsifier": "graphqlsifier -s packages/graphqlsifier/src/server/entities/*.ts -o packages/graphqlsifier/src/browser/entities"
+    "test-graphqlizer": "graphqlizer -s packages/graphqlizer/src/server/entities/*.ts -o packages/graphqlizer/src/browser/entities"
   },
   "keywords": [
     "cli",
