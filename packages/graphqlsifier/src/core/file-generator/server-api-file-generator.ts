@@ -12,7 +12,7 @@ import {
     Type,
     Symbol, Structure, Decorator,
     StringLiteral,
-    ObjectLiteralExpression
+    ObjectLiteralExpression, OptionalKind, DecoratorStructure
 } from 'ts-morph';
 import Mustache from 'mustache';
 import _ from 'lodash';
@@ -417,6 +417,18 @@ export class ServerAPIFileGenerator extends FileGenerator
         });
     }
 
+    addDecorator(property: PropertyDeclaration, structure: OptionalKind<DecoratorStructure>): Decorator
+    {
+        const existingDecorator = property.getDecorators()?.find(x => x?.getName() === structure.name);
+
+        if(existingDecorator)
+        {
+            return existingDecorator;
+        }
+
+        return property.addDecorator(structure);
+    }
+
     addNamedImport(declaration: ImportDeclaration, importName: string)
     {
         const namedImport = declaration.getNamedImports()?.find(x => x?.getName() === importName);
@@ -452,7 +464,8 @@ export class ServerAPIFileGenerator extends FileGenerator
                 this.addNamedImport(importDeclationClassValidator, classValidatorDecorator);
 
 
-                singProperty.addDecorator({
+                this.addDecorator(singProperty,
+                    {
                     name: classValidatorDecorator,
                     arguments: classValidatorDecoratorArgs ?? [],
                 });
@@ -464,7 +477,8 @@ export class ServerAPIFileGenerator extends FileGenerator
                 this.addNamedImport(importDeclationClassValidator, 'IsArray');
 
 
-                singProperty.addDecorator({
+                this.addDecorator(singProperty,
+                    {
                     name: 'IsArray',
                     arguments: [],
                 });
@@ -479,7 +493,8 @@ export class ServerAPIFileGenerator extends FileGenerator
                 if(isToAddClassValidatorArrayTag) // array of objects
                 {
 
-                    singProperty.addDecorator({
+                    this.addDecorator(singProperty,
+                        {
                         name: 'ValidateNested',
                         arguments: [`{each: true}`],
                     });
@@ -487,7 +502,8 @@ export class ServerAPIFileGenerator extends FileGenerator
                 }else{
 
 
-                    singProperty.addDecorator({ // just an object not an array
+                    this.addDecorator(singProperty,
+                        { // just an object not an array
                         name: 'ValidateNested',
                         arguments: [],
                     });
@@ -496,7 +512,8 @@ export class ServerAPIFileGenerator extends FileGenerator
 
                 this.addNamedImport(importDeclarationClassTransformer, 'Type');
                 
-                singProperty.addDecorator({
+                this.addDecorator(singProperty,
+                    {
                     name: 'Type',
                     arguments: [`() => ${fieldType}`],
                 });
@@ -518,12 +535,14 @@ export class ServerAPIFileGenerator extends FileGenerator
 
             if(isNullable) // Nullable
             {
-                singProperty.addDecorator({
+                this.addDecorator(singProperty,
+                    {
                     name: "Field",
                     arguments: [`type => ${fieldType}`, `{nullable: true}`],
                 });
             }else{ // Not nullable
-                singProperty.addDecorator({
+                this.addDecorator(singProperty,
+                    {
                     name: "Field",
                     arguments: [`type => ${fieldType}`, `{nullable: false}`],
                 });
