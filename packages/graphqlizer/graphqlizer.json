@@ -35,7 +35,7 @@
             "isEverythingOptional": true,
             "isToAddClassValidatorDecorators": true,
             "isToAddNestJSGraphQLDecorators": true,
-            "isToAddTypeOrmDecorators": true,
+            "isToAddTypeOrmDecorators": false,
             "hasNoProperties": true
         },
         {
@@ -45,7 +45,7 @@
             "isEverythingOptional": false,
             "isToAddClassValidatorDecorators": true,
             "isToAddNestJSGraphQLDecorators": true,
-            "isToAddTypeOrmDecorators": true
+            "isToAddTypeOrmDecorators": false
         },
         {
             "className": "Update{{sourceClassName}}Input",
@@ -54,7 +54,7 @@
             "isEverythingOptional": true,
             "isToAddClassValidatorDecorators": true,
             "isToAddNestJSGraphQLDecorators": true,
-            "isToAddTypeOrmDecorators": true
+            "isToAddTypeOrmDecorators": false
         }
 
 
