@@ -24,6 +24,7 @@ export interface IDecoratorOptions
     filePath?: string;
     isToAddClassValidatorDecorators: boolean;
     isToAddNestJSGraphQLDecorators: boolean;
+    isToAddTypeOrmDecorators: boolean;
     isEverythingOptional: boolean;
     graphqlObjectType: GraphQLObjectType;
     hasNoProperties?: boolean;

@@ -75,7 +75,14 @@ const options: any = yargs.options({
         alias: 'graphql',
         demandOption: true,
         default: true,
-        describe: 'Add Nest JS GraphQLValidators',
+        describe: 'Add Nest JS GraphQL Decorators',
+        type: 'boolean'
+    },
+    m: {
+        alias: 'typeorm',
+        demandOption: true,
+        default: true,
+        describe: 'Add Nest Typeorm Decorators',
         type: 'boolean'
     },
     t: {
@@ -138,6 +145,7 @@ if(options.project)
                     isEverythingOptional: options.optional,
                     isToAddClassValidatorDecorators: options.validator,
                     isToAddNestJSGraphQLDecorators: options.graphql,
+                    isToAddTypeOrmDecorators: options.typeorm,
                     hasNoProperties: options.nop
                 }
             ]

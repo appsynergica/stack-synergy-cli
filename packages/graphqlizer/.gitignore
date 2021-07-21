@@ -2,3 +2,4 @@ node_modules
 dist
 src/browser
 src/graphql
+src/server/api

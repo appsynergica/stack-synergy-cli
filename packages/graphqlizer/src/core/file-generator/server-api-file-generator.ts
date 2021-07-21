@@ -56,7 +56,7 @@ export class ServerAPIFileGenerator extends FileGenerator
 
     }
 
-    createOutputFile(sourceFile: SourceFile, sourceClass: ClassDeclaration, filePathTemplate: string): SourceFile
+    createOutputFile(sourceClass: ClassDeclaration, filePathTemplate: string): SourceFile
     {
        // const pathOfFile = `${this.rootOutputDir}/${this.toStandardFileNamePrefix(sourceClass.getName())}.ts`;
 
@@ -66,20 +66,6 @@ export class ServerAPIFileGenerator extends FileGenerator
         const outputFile = this.project.createSourceFile(pathOfFile, {
         }, { overwrite: true });
 
-
-        // TODO: copy typeorm imports under a condition of whether to add typeorm decorators or not
-        // copy typeorm imports
-        const sourceImportDeclarationTypeORM = sourceFile.getImportDeclaration(x => x.getModuleSpecifierValue() === 'typeorm');
-
-
-        // ensures the typeorm import is added only once perfile
-        // just incase this fxn is called more than once for some reason
-        const importDeclarationTypeORM = this.addImportDeclaration(outputFile, 'typeorm');
-
-        sourceImportDeclarationTypeORM.getNamedImports().forEach( x => {
-
-            this.addNamedImport(importDeclarationTypeORM, x.getName())
-        });
 
         // outputFile.addImportDeclaration(importDeclarationTypeORM.getStructure());
         //
@@ -97,12 +83,32 @@ export class ServerAPIFileGenerator extends FileGenerator
         //
         Object.keys(groupedOutputClasses).forEach( singOutputPathTemplate => {
 
-            // create an output file for each output paath
+            // create an output file for each output path
+           const outputFile = this.createOutputFile(sourceClass, singOutputPathTemplate);
 
-           const outputFile = this.createOutputFile(sourceFile, sourceClass, singOutputPathTemplate);
 
             // get the array of grouped file output options for each class
             const outputOptionsArray = groupedOutputClasses[singOutputPathTemplate];
+
+            // copy typeorm imports
+            // include typeorm output classes if at least one class in the
+            // output file requires typeorm decorators
+            if(outputOptionsArray?.some(x => x.isToAddTypeOrmDecorators))
+            {
+                const sourceImportDeclarationTypeORM = sourceFile.getImportDeclaration(x => x.getModuleSpecifierValue() === 'typeorm');
+
+
+                // ensures the typeorm import is added only once perfile
+                // just incase this fxn is called more than once for some reason
+                const importDeclarationTypeORM = this.addImportDeclaration(outputFile, 'typeorm');
+
+                sourceImportDeclarationTypeORM.getNamedImports().forEach( x => {
+
+                    this.addNamedImport(importDeclarationTypeORM, x.getName())
+                });
+            }
+
+
 
             // create classes for each grouped option
             outputOptionsArray?.forEach(singOption => {
@@ -145,9 +151,10 @@ export class ServerAPIFileGenerator extends FileGenerator
 
         //add file imports
 
-        const importDeclarationClassValidator =  this.addImportDeclaration(destinationFile, 'class-validator');
-        const importDeclarationNestGraphQL = this.addImportDeclaration(destinationFile, '@nestjs/graphql');
-        const importDelcarationClassTransformer = this.addImportDeclaration(destinationFile, 'class-transformer');
+        const importDeclarationClassValidator = options.isToAddClassValidatorDecorators ?  this.addImportDeclaration(destinationFile, 'class-validator') : null;
+        const importDelcarationClassTransformer  = options.isToAddClassValidatorDecorators ?  this.addImportDeclaration(destinationFile, 'class-transformer') : null;
+
+        const importDeclarationNestGraphQL  = options.isToAddNestJSGraphQLDecorators ?  this.addImportDeclaration(destinationFile, '@nestjs/graphql'): null;
 
 
 
@@ -196,7 +203,6 @@ export class ServerAPIFileGenerator extends FileGenerator
 
                 const singPropertyStruct = {... singProperty.getStructure()};
 
-                // TODO: Add TypeORM Decorators at the end under a condition of whether to add typeorm decorators or not
                 delete singPropertyStruct.decorators;
 
                 // create a corresponding property without source property decorators
@@ -204,7 +210,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                 const destProperty = destinationClass.addProperty(singPropertyStruct);
 
                 // @ts-ignore
-                singProperty.getDecorators().forEach((singDecorator, index, array) => {
+                singProperty.getDecorators().forEach((singSourceDecorator, index, array) => {
 
                     //console.log('\n\nProperty : ' + JSON.stringify(singProperty.getStructure(), null, 2));
                     //console.log('\n\nDecorator : ' + JSON.stringify(singDecorator.getStructure(), null, 2));
@@ -215,12 +221,12 @@ export class ServerAPIFileGenerator extends FileGenerator
 
                         const propType = singProperty.getType();
 
-                        const propPrimitiveInfo = this.getPrimitiveTypeInfo(singDecorator);
+                        const propPrimitiveInfo = this.getPrimitiveTypeInfo(singSourceDecorator);
 
                         const propReferenceInfo = this.getReferenceTypeInfo(propType, options);
 
                     // TODO: Confirm whether MongoDB ObjectIDs are ALWAYS numberic & fix the if else logic accordingly
-                    if(singDecorator.getName() === 'PrimaryGeneratedColumn' || singDecorator.getName() === 'PrimaryColumn' || singDecorator.getName() === 'ObjectIdColumn') // PRIMARY 
+                    if(singSourceDecorator.getName() === 'PrimaryGeneratedColumn' || singSourceDecorator.getName() === 'PrimaryColumn' || singSourceDecorator.getName() === 'ObjectIdColumn') // PRIMARY
                     {
                         this.addPropertyDecorator(destProperty,
                             false,
@@ -232,7 +238,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                             importDelcarationClassTransformer,
                             options);
 
-                    }else if(singDecorator.getName() === 'CreateDateColumn' || singDecorator.getName() === 'UpdateDateColumn' || singDecorator.getName() === 'DeleteDateColumn') // DATE
+                    }else if(singSourceDecorator.getName() === 'CreateDateColumn' || singSourceDecorator.getName() === 'UpdateDateColumn' || singSourceDecorator.getName() === 'DeleteDateColumn') // DATE
                     {
                         this.addPropertyDecorator(destProperty,
                             false,
@@ -298,7 +304,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     options);
 
                                 // TODO: Seperate Int from Float
-                            }else if(singDecorator.getName() === 'VersionColumn' || (propType.isNumber() && propPrimitiveInfo.typeName === PrimitiveTypeName.Float) || propPrimitiveInfo.typeName === PrimitiveTypeName.Float) // Float
+                            }else if(singSourceDecorator.getName() === 'VersionColumn' || (propType.isNumber() && propPrimitiveInfo.typeName === PrimitiveTypeName.Float) || propPrimitiveInfo.typeName === PrimitiveTypeName.Float) // Float
                             {
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
                                     'IsNumber',
@@ -387,7 +393,17 @@ export class ServerAPIFileGenerator extends FileGenerator
                     }
 
 
+
+
+                    // add the existing decorators of the property
+                    if(options.isToAddTypeOrmDecorators)
+                    {
+                        destProperty.addDecorator(singSourceDecorator.getStructure());
+                    }
+
+
                 });
+
 
 
             });
@@ -432,16 +448,21 @@ export class ServerAPIFileGenerator extends FileGenerator
         return property.addDecorator(structure);
     }
 
-    addNamedImport(declaration: ImportDeclaration, importName: string)
+    addNamedImport(declaration: ImportDeclaration | null, importName: string)
     {
-        const namedImport = declaration.getNamedImports()?.find(x => x?.getName() === importName);
-
-        if(namedImport)
+        if(declaration)
         {
-            return namedImport;
+            const namedImport = declaration.getNamedImports()?.find(x => x?.getName() === importName);
+
+            if(namedImport)
+            {
+                return namedImport;
+            }
+
+            return declaration.addNamedImport(importName);
         }
 
-       return declaration.addNamedImport(importName);
+        return null;
 
     }
 
@@ -450,9 +471,9 @@ export class ServerAPIFileGenerator extends FileGenerator
                          classValidatorDecorator: string,
                          classValidatorDecoratorArgs: string[],
                          fieldType: string,
-                         importDeclationClassValidator: ImportDeclaration,
-                         importDeclationNestJS: ImportDeclaration,
-                         importDeclarationClassTransformer: ImportDeclaration,
+                         importDeclationClassValidator: ImportDeclaration | null,
+                         importDeclationNestJS: ImportDeclaration | null,
+                         importDeclarationClassTransformer: ImportDeclaration | null,
                          options: IDecoratorOptions,
                          isToAddClassValidatorArrayTag = false,
                          isPropertyObjectType = false)
