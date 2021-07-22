@@ -1,24 +1,34 @@
 ---
 layout: default
-title:  "Jekyll Lives Matter!"
-description: "This is the latest post on how to use Jekyll. If you are stuck, or need help, this post is for you."
+title:  "Browsifier Released!"
+description: "This is the latest component of the Stack Synergy CLI. It removes TypeORM Decorators from Entities."
 published: true
 category: news
-author: shelly
+author: desmondrg
 lang: en_GB
 menu: false
 search: true
 # Make "image:false" if you don't want an image to display.
-image: https://picsum.photos/id/1074/666/350.jpg
+image: /assets/images/posts/browsifier.png
 sitemap:
     changefreq: monthly
     priority: 0.9
 ---
 
-## Jekyll Lives Matter!
+## Browsifier Released!
 
-**Hello world**, this is my first Jekyll blog post.
+The [Browsifier][Browsifier] is the first component of the Stack Synergy CLI.
 
 <!--excerpt-->
 
-I hope you like it! 
+Do you need to generate Entities / classes without TypeORM decorators for use on the browser side? Well the [Browsifier][Browsifier] CLI is the tool for you. The [Browsifier CLI][Browsifier] is a component of the [Stack Synergy CLI][StackSynergyCLI], a powerful CLI that aims to stream line the development experiance of MEAN stack developers. Need to know more about the Browsifier? Checkout the [Browsifer repository][Browsifier] on github. Or the corresponding [package][BrowsifierNpm] on npm.  
+
+#### Installation
+```console
+
+npm i @urbanshona/browsifier
+
+```
+[StackSynergyCLI]: https://github.com/urbanshona/stack-synergy-cli
+[Browsifier]: https://github.com/urbanshona/stack-synergy-cli/tree/master/packages/browsifier
+[BrowsifierNpm]: https://www.npmjs.com/package/@urbanshona/browsifier
