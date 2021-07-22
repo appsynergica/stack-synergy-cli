@@ -1,0 +1,129 @@
+---
+title: Jekyll Heroku Starter Kit
+tagline: Comprehensive boilerplate code for installing and configuring a Jekyll 4 site on Heroku with an elegant Material Design Lite theme.
+timezone: Africa/Johannesburg
+locale: en_GB
+##
+## Set the url to your site below
+##
+url:
+baseurl:
+##
+## Material Design Lite theme options.
+## https://github.com/chromatical/jekyll-materialdocs
+##
+theme: jekyll-materialdocs
+mdl_colors: pink-blue # a supported MDL color scheme (https://getmdl.io/customize/index.html)
+logo: /assets/images/logo.svg # an absolute or relative image path to use as the site logo
+copyright: 22 Digital Ltd # will override the company name in the copyright (default is site title)
+search: true # enabled by default, set to false to disable site search
+#menu_style: dropdown # will only show child menu items for the main item selected
+google_analytics: UA-100937492-4
+##
+## Enabling Collections for the Site.
+##
+collections:
+  posts:
+    title                     : Posts
+    output                    : true # Set this to false to prevent from appearing on site.
+    permalink                 : /:categories/:title.html
+  pages:
+    title                     : Pages
+    output                    : true
+    permalink                 : /:categories/:title.html
+##
+## Exclude these files from the build.
+##
+exclude:
+- '.github'
+- '.editorconfig'
+- '.gitignore'
+- '_config.yml'
+- 'CHANGELOG.md'
+- 'CODE_OF_CONDUCT.md'
+- 'config.ru'
+- 'CONTRIBUTING.md'
+- 'LICENSE'
+- 'Procfile'
+- 'Rakefile'
+- 'README.md'
+- 'static.json'
+##
+## Configure and setup the plugins for the site.
+##
+plugins:
+- jekyll-feed # https://github.com/jekyll/jekyll-feed
+- jekyll-seo-tag # https://github.com/jekyll/jekyll-seo-tag
+- jekyll-sitemap # https://github.com/jekyll/jekyll-sitemap
+- jekyll-paginate-v2 # https://github.com/sverrirs/jekyll-paginate-v2
+- jekyll-include-cache # https://github.com/benbalter/jekyll-include-cache
+- jekyll-last-modified-at # https://github.com/gjtorikian/jekyll-last-modified-at
+- jekyll-redirect-from # https://github.com/jekyll/jekyll-redirect-from
+##
+## All the Settings for the @jekyll-seo-tag
+## https://github.com/jekyll/jekyll-seo-tag
+##
+# Your twitter details
+twitter:
+  username: justinhartman
+  card: summary
+# Facebook App ID. You need to create an app at:
+# https://developers.facebook.com/apps
+facebook:
+  app_id: 1234
+  publisher: 1234
+  admins: 1234
+# Links to other social profiles or websites that you own.
+social:
+  name: Justin Hartman
+  links:
+    - https://twitter.com/justinhartman
+    - https://www.facebook.com/justinhartman.co
+    - https://www.linkedin.com/in/justinhartman
+    - https://github.com/justinhartman
+# When you verify with either of the Webmaster Tools below, enter the
+# verification key below.
+webmaster_verifications:
+  google: 1234
+  bing: 1234
+  alexa: 1234
+  yandex: 1234
+  baidu: 1234
+# Setting a default image:
+# Settings to provide a default Twitter Card or OGP image to all of your posts
+# and pages.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: https://picsum.photos/1200/630.jpg
+##
+## All the Settings for the @jekyll-paginate-v2
+## https://github.com/sverrirs/jekyll-paginate-v2
+##
+pagination:
+  enabled: false # Set to true to enable Pagination. Enable only once editing theme files.
+  debug: false
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/' # Pages are index.html inside this folder (default)
+  #permalink: '/page/:num.html' # Pages are simple html files
+  #permalink: '/page/:num' # Pages are html files, linked jekyll extensionless permalink style.
+  title: ':title - page :num'
+  limit: 0 # 0 means all
+  sort_field: 'date' # Optional, defines the field that the posts should be sorted on
+  sort_reverse: true # Optional, sorts the posts in reverse order
+  category: 'posts'
+  tag: ''
+  locale: 'en_GB'
+  # Optional,omit or set both before and after to zero to disable.
+  # Controls how the pagination trail for the paginated pages look like.
+  trail:
+    before: 2
+    after: 2
+  # Optional, the default file extension for generated pages (e.g html, json, xml).
+  extension: html
+  # Optional, the default name of the index file for generated pages (e.g. 'index.html')
+  # Without file extension
+  indexpage: 'index'
+---

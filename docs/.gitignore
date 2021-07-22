@@ -1,0 +1,8 @@
+.jekyll-cache/
+_site/
+.bundle/
+.sass-cache/
+vendor/
+.jekyll-metadata
+heroku.log
+.env

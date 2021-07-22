@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en" }}">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">
+                    {% if page.title %}<h1 id="page-title" class="mdl-typography--title">{{ page.title }}</h1>{% endif %}
+                </span>
+                {% if site.search != false %}
+                <div class="mdl-layout-spacer"></div>
+                <a href="{% link assets/search.html %}" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">search</i>
+                </a>
+                {% endif %}
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">
+            {%- if site.logo %}
+                <a id="site-title" href="{{ '/' | absolute_url }}">
+                    <img src="{{ site.logo | absolute_url }}" alt="{{ site.title }}" id="site-logo">
+                </a>
+            {% else %}
+                <a id="site-title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
+            {% endif -%}
+            </span>
+            <nav class="mdl-navigation">
+                {%- include menu.html %}
+            </nav>
+        </div>
+        <div class="ribbon"></div>
+        <main class="main mdl-layout__content">
+            <div class="main-container mdl-grid">
+                <div class="mdl-cell mdl-cell--2-col"></div>
+                <!-- <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div> -->
+                <div class="main-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"{% if page.image != false %} style="background-image:url('{{ page.image }}');background-repeat:no-repeat;background-size:100% 350px;padding-top:350px;"{% endif %}>
+                    {{ content }}
+                </div>
+            </div>
+            <footer class="main-footer mdl-mini-footer">
+                {% include footer.html -%}
+            </footer>
+        </main>
+    </div>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+
+</html>

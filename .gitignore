@@ -71,7 +71,6 @@ yarn-error.log*
 
 #yarn turn off zero installs
 .yarn/*
-!.yarn/patches
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
@@ -98,3 +97,5 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+bash.exe.stackdump

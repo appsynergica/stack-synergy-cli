@@ -1,0 +1,25 @@
+source 'https://rubygems.org'
+ruby "3.0.2"
+gem 'bundler', '~> 2.2.3'
+gem "jekyll", '~> 4.2.0'
+gem "rack", ">= 2.1.4"
+gem "wdm", ">=0.1.0"
+gem 'rack-jekyll'
+gem 'rake'
+gem 'jekyll-materialdocs'
+
+group :jekyll_plugins do
+  gem 'jekyll-feed'
+  gem 'jekyll-seo-tag'
+  gem 'jekyll-sitemap'
+  gem 'jekyll-paginate-v2'
+  gem 'jekyll-include-cache'
+  gem 'jekyll-last-modified-at'
+  gem 'jekyll-redirect-from'
+end
+
+gem "tzinfo", "~> 2.0"
+
+gem "tzinfo-data", "~> 1.2021"
+
+gem "webrick", "~> 1.7"
