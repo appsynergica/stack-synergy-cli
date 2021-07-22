@@ -1,9 +1,11 @@
 
   
     
-## Stack Synergy CLI <span class="badge-patreon">    
+## Stack Synergy CLI 
+<span class="badge-patreon">    
 <a href="https://patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>    
 </span>    
+
 <span class="badge-opencollective">    
 <a href="https://opencollective.com/urbanshona" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a>    
 </span>    
