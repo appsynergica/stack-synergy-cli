@@ -2,9 +2,9 @@
 layout: news
 published: true
 title: News
-description: "A collection of all the latest news from this Jekyll website."
+description: "A collection of all the latest news about the Stack Synergy CLI"
 permalink: /news/index.html
-author: justinhartman
+author: desmondrg
 lang: en_GB
 menu: News
 weight: 2

@@ -1,9 +1,9 @@
 ---
 layout: page
 published: true
-title: About 22 Digital
-description: "A description for the about page which appears in SEO."
-author: justinhartman
+title: About Stack Synergy CLI
+description: "About Stack Synergy CLI"
+author: desmondrg
 lang: en_GB
 # Sidebar Navigation Settings.
 menu: About Us # Set to false to hide from the menu completely.
@@ -31,21 +31,11 @@ sitemap:
 ---
 ## 🏢 About
 
-![22 Digital](/assets/images/logo.svg){: .responsive-img}
+![22 Digital](/assets/images/logos/urban-shona-logo-blue.png){: .responsive-img}
 {: .mdl-cell--3-col .float-left}
 
-[22 Digital][22] is a different kind of agency.
-We don't just work for money, nor with simply anyone.
-Our mission is to change the world. If that's yours; let's talk.
+[Stack Synergy CLI][StackSynergyCLI] is the first open source project of [Urban Shona Tech][UrbanShonaTech]. Urban Shona is a tech company that aims to develop open source software that speeds up the development process of MEAN Stack Apps.
 {: .mdl-cell--9-col .float-right}
 
-### Lorem
-{: .mdl-cell--9-col .float-right}
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime perspiciatis 
-aliquid impedit voluptatibus repudiandae molestiae error aperiam doloremque 
-aliquam dolor. Totam ullam perspiciatis earum quibusdam, magnam ipsum dicta 
-consectetur accusantium.
-{: .mdl-cell--9-col .float-right}
-
-[22]: https://22digital.ltd
+[StackSynergyCLI]: https://github.com/urbanshona
+[UrbanShonaTech]: https://urbanshona.herokuapp.com

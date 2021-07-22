@@ -14,11 +14,11 @@ baseurl:
 ##
 theme: jekyll-materialdocs
 mdl_colors: pink-blue # a supported MDL color scheme (https://getmdl.io/customize/index.html)
-logo: /assets/images/logo.svg # an absolute or relative image path to use as the site logo
-copyright: 22 Digital Ltd # will override the company name in the copyright (default is site title)
+logo: /assets/images/logos/urban-shona-logo.png # an absolute or relative image path to use as the site logo
+copyright: Urban Shona Tech # will override the company name in the copyright (default is site title)
 search: true # enabled by default, set to false to disable site search
 #menu_style: dropdown # will only show child menu items for the main item selected
-google_analytics: UA-100937492-4
+google_analytics: UA-145507902-2
 ##
 ## Enabling Collections for the Site.
 ##
@@ -65,7 +65,7 @@ plugins:
 ##
 # Your twitter details
 twitter:
-  username: justinhartman
+  username: desmondrg
   card: summary
 # Facebook App ID. You need to create an app at:
 # https://developers.facebook.com/apps
