@@ -3,7 +3,7 @@ layout: page
 published: true
 # @jekyll-seo-tag
 # Settings for @jekyll-seo-tag - https://github.com/jekyll/jekyll-seo-tag
-title: Jekyll Heroku Starter Kit
+title: Stack Synergy CLI
 description: A boilerplate template to set up Jekyll 4 on a free 
              Heroku server. Included are additional Jekyll plugins to 
              showcase the full capabailities and it comes with an elegantly
