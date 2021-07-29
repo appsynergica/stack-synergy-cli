@@ -8,7 +8,7 @@
   "repository": "https://github.com/desmondrg/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
-  },
+  },                
   "main": "./src/index.js",
   "types": "types/src/index.d.ts",
   "license": "MIT",
