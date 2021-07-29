@@ -1,6 +1,6 @@
 {
   "name": "@desmondrg/browsifier",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": {
     "name": "Desmond Rgwaringesu",
     "email": "desmondrg@gmail.com"
@@ -55,7 +55,7 @@
       "type" : "patreon",
       "url" : "https://www.patreon.com/desmondrg"
     },
-    "https://opencollective.com/desmondrg",
+    "https://opencollective.com/stack-synergy",
     "https://ko-fi.com/desmondrg"
   ]
 }

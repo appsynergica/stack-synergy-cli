@@ -3,11 +3,11 @@
     
 ## Stack Synergy CLI 
 <span class="badge-patreon">    
-<a href="https://patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>    
+<a href="https://www.patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>    
 </span>    
 
 <span class="badge-opencollective">    
-<a href="https://opencollective.com/desmondrg" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a>    
+<a href="https://opencollective.com/stack-synergy" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a>    
 </span>    
 <span class="badge-buymeacoffee">    
 <a href="https://buymeacoffee.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>    
@@ -35,10 +35,10 @@ Stack Synergy CLI is a mono-repository of tools that aim to stream line the proc
 </p>            
             
 <span class="badge-patreon">    
-<a href="https://patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>    
+<a href="https://www.patreon.com/desmondrg" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>    
 </span>    
 <span class="badge-opencollective">    
-<a href="https://opencollective.com/desmondrg" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a>    
+<a href="https://opencollective.com/stack-synergy" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a>    
 </span>    
 <span class="badge-buymeacoffee">    
 <a href="https://buymeacoffee.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>    
