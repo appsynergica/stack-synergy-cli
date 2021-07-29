@@ -1,5 +1,5 @@
 {
-  "name": "@urbanshona/stack-synergy-cli",
+  "name": "@desmondrg/stack-synergy-cli",
   "version": "0.0.1",
   "private": true,
   "author": {
@@ -10,16 +10,16 @@
   "scripts": {
     "debug-repo": "tsc --project tsconfig.json",
     "build-repo": "y run build",
-    "build-common-cli": "yarn workspace @urbanshona/common-cli build",
-    "build-browsifier": "yarn workspace @urbanshona/browsifier build",
-    "build-graphqlizer": "yarn workspace @urbanshona/graphqlizer build",
-    "publish-browsifier:local": "yarn workspace @urbanshona/browsifier publish:local",
-    "publish-browsifier:global": "yarn workspace @urbanshona/browsifier publish:global",
-    "publish-graphqlizer:local": "yarn workspace @urbanshona/graphqlizer publish:local",
-    "publish-graphqlizer:global": "yarn workspace @urbanshona/graphqlizer publish:global",
-    "publish-common-cli": "yarn workspace @urbanshona/common-cli publish",
-    "dev-browsifier": "yarn workspace @urbanshona/browsifier dev",
-    "dev-graphqlizer": "yarn workspace @urbanshona/graphqlizer dev",
+    "build-common-cli": "yarn workspace @desmondrg/common-cli build",
+    "build-browsifier": "yarn workspace @desmondrg/browsifier build",
+    "build-graphqlizer": "yarn workspace @desmondrg/graphqlizer build",
+    "publish-browsifier:local": "yarn workspace @desmondrg/browsifier publish:local",
+    "publish-browsifier:global": "yarn workspace @desmondrg/browsifier publish:global",
+    "publish-graphqlizer:local": "yarn workspace @desmondrg/graphqlizer publish:local",
+    "publish-graphqlizer:global": "yarn workspace @desmondrg/graphqlizer publish:global",
+    "publish-common-cli": "yarn workspace @desmondrg/common-cli publish",
+    "dev-browsifier": "yarn workspace @desmondrg/browsifier dev",
+    "dev-graphqlizer": "yarn workspace @desmondrg/graphqlizer dev",
     "test-browsifier": "browsifier -s packages/browsifier/src/server/entities -o packages/browsifier/src/browser/entities -q true",
     "test-graphqlizer": "graphqlizer -s packages/graphqlizer/src/server/entities/*.ts -o packages/graphqlizer/src/browser/entities"
   },
@@ -44,7 +44,7 @@
     "generate nestjs files from template",
     "scaffold full stack nestjs and angular project"
   ],
-  "repository": "https://github.com/urbanshona/stack-synergy-cli.git",
+  "repository": "https://github.com/desmondrg/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -65,7 +65,7 @@
       "type" : "patreon",
       "url" : "https://www.patreon.com/desmondrg"
     },
-    "https://opencollective.com/urbanshona",
+    "https://opencollective.com/desmondrg",
     "https://ko-fi.com/desmondrg"
   ]
 }

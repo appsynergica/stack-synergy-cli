@@ -1,5 +1,5 @@
 {
-  "name": "@urbanshona/stack-synergy",
+  "name": "@desmondrg/stack-synergy",
   "version": "0.0.1",
   "author": {
     "name": "Desmond Rgwaringesu",
@@ -26,7 +26,7 @@
     "add class validator to typeorm entities",
     "remove decorators from TypeORM Entities"
   ],
-  "repository": "https://github.com/urbanshona/stack-synergy-cli.git",
+  "repository": "https://github.com/desmondrg/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -35,10 +35,10 @@
   "bin": "./cli.js",
   "license": "MIT",
   "dependencies": {
-    "@urbanshona/common-cli": "^0.0.9",
-    "@urbanshona/browsifier": "^0.0.1",
-    "@urbanshona/graphqlizer": "^0.0.1",
-    "@urbanshona/nestifier": "^0.0.1",
+    "@desmondrg/common-cli": "^0.0.9",
+    "@desmondrg/browsifier": "^0.0.1",
+    "@desmondrg/graphqlizer": "^0.0.1",
+    "@desmondrg/nestifier": "^0.0.1",
     "chalk": "^4.1.1",
     "figlet": "^1.5.0",
     "lodash": "^4.17.21",
@@ -65,7 +65,7 @@
       "type" : "patreon",
       "url" : "https://www.patreon.com/desmondrg"
     },
-    "https://opencollective.com/urbanshona",
+    "https://opencollective.com/desmondrg",
     "https://ko-fi.com/desmondrg"
   ]
 }

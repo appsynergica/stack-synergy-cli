@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import yargs from 'yargs';
-import {logger} from '@urbanshona/common-cli';
-import {FileGenerator, IFileGeneratorOptions} from '@urbanshona/common-cli';
+import {logger} from '@desmondrg/common-cli';
+import {FileGenerator, IFileGeneratorOptions} from '@desmondrg/common-cli';
 import {BrowserFileGenerator} from './core/file-generator/browser-file-generator';
 logger.context = 'Browsifier';
 

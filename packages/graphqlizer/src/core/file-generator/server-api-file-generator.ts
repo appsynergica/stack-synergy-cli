@@ -16,7 +16,7 @@ import {
 } from 'ts-morph';
 import Mustache from 'mustache';
 import _ from 'lodash';
-import {FileGenerator, logger} from '@urbanshona/common-cli';
+import {FileGenerator, logger} from '@desmondrg/common-cli';
 logger.context = 'Graphqlizer';
 
 // disable html escaping for Mustache

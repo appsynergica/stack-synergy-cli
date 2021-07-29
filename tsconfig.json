@@ -10,20 +10,20 @@
     "noUnusedLocals": true,
     "noImplicitAny": false,
     "declaration": false,
-    "outDir": "dist/urbanshona/monorepo",
+    "outDir": "dist/desmondrg/monorepo",
     "target": "es2015",
     "module": "commonjs",
     "strict": true,
     "baseUrl": "./",
     "types": ["node"],
     "paths": {
-      "@urbanshona/common-cli": [
+      "@desmondrg/common-cli": [
         "packages/common-cli/src/index.ts"
       ],
-      "@urbanshona/browsifier": [
+      "@desmondrg/browsifier": [
         "packages/browsifier/src/index.ts"
       ],
-      "@urbanshona/graphqlizer": [
+      "@desmondrg/graphqlizer": [
         "packages/graphqlizer/src/index.ts"
       ]
     }

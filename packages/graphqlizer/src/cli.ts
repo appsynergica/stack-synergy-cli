@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import yargs from 'yargs';
-import {logger,FileGenerator, fxnReadJSON} from '@urbanshona/common-cli';
+import {logger,FileGenerator, fxnReadJSON} from '@desmondrg/common-cli';
 import {IGraphqlizerConfig} from './core/core-gen';
 import {ServerAPIFileGenerator} from './core/file-generator/server-api-file-generator';
 logger.context = 'graphqlizer';
