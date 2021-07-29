@@ -6,7 +6,7 @@
     "name": "Desmond Rgwaringesu",
     "email": "desmondrg@gmail.com"
   },
-  "description": "Urban Shona is a mono-repository of tools that stream line the process of creating MyEAN Stack Web Applications",
+  "description": "Stack Synergy CLI is a mono-repository of tools that stream line the process of creating MyEAN Stack Web Applications",
   "scripts": {
     "debug-repo": "tsc --project tsconfig.json",
     "build-repo": "y run build",
