@@ -31,7 +31,7 @@ sitemap:
 ---
 ## 🏢 About
 
-![DesmondRG](/assets/images/authors/desmondrg.png){: .responsive-img}
+![DesmondRG](docs/assets/images/authors/desmondrg.jpg){: .responsive-img}
 {: .mdl-cell--3-col .float-left}
 
 [Stack Synergy CLI][StackSynergyCLI] is the first open source project by [Desmond RG][DesmondRG].
