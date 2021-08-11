@@ -31,11 +31,11 @@ sitemap:
 ---
 ## 🏢 About
 
-![22 Digital](/assets/images/logos/urban-shona-logo-blue.png){: .responsive-img}
+![DesmondRG](/assets/images/authors/desmondrg.jpg){: .responsive-img}
 {: .mdl-cell--3-col .float-left}
 
-[Stack Synergy CLI][StackSynergyCLI] is the first open source project of [Urban Shona Tech][UrbanShonaTech]. Urban Shona is a tech company that aims to develop open source software that speeds up the development process of MEAN Stack Apps.
+[Stack Synergy CLI][StackSynergyCLI] is the first open source project by [Desmond RG][DesmondRG].
 {: .mdl-cell--9-col .float-right}
 
-[StackSynergyCLI]: https://github.com/desmondrg
-[UrbanShonaTech]: https://desmondrg.herokuapp.com
+[StackSynergyCLI]: https://github.com/desmondrg/stack-synergy-cli
+[DesmondRG]: https://www.linkedin.com/in/desmond-rgwaringesu-83595798

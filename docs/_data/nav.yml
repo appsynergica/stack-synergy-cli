@@ -3,8 +3,8 @@
   weight: 0 # Ensures this link appears at the top of the navigation bar.
             # Use weight here and in your pages to define the order of links.
 
-- title: "Urban Shona Tech"
-  url: "https://desmondrg.herokuapp.com"
+- title: "Stack Synergy CLI"
+  url: "https://desmondrg.github.com/stack-synergy-cli"
   tab: true # Opens this link in a new tab.
   id: external # Will be used as a parent item so we can created child links.
   weight: 999 # Ensures these links appear below all the other links.
