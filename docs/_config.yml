@@ -14,7 +14,7 @@ baseurl:
 ##
 theme: jekyll-materialdocs
 mdl_colors: pink-blue # a supported MDL color scheme (https://getmdl.io/customize/index.html)
-logo: /assets/images/logos/urban-shona-logo.png # an absolute or relative image path to use as the site logo
+logo: /assets/images/authors/desmondrg.png # an absolute or relative image path to use as the site logo
 copyright: Desmond RG # will override the company name in the copyright (default is site title)
 search: true # enabled by default, set to false to disable site search
 #menu_style: dropdown # will only show child menu items for the main item selected

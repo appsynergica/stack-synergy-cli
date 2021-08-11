@@ -12,18 +12,13 @@
 - title: "Urbanshona Tech on GitHub"
   url: "https://github.com/desmondrg"
   tab: true
-  parent: external # Will make this item a child of the item above.
-                   # Not displayed when menu_style set to 'dropdown'.
-
-- title: "Desmond RG"
-  url: "https://desmondrg.herokuapp.com"
-  tab: true
   parent: external
 
 - title: "Desmond RG on GitHub"
-  url: "https://github.com/desmondrg263"
+  url: "https://github.com/desmondrg"
   tab: true
-  parent: external
+  parent: external # Will make this item a child of the item above.
+                   # Not displayed when menu_style set to 'dropdown'.
 
 - title: "Desmond RG on LinkedIn"
   url: "https://zw.linkedin.com/in/desmond-rgwaringesu-83595798"
