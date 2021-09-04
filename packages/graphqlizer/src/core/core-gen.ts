@@ -35,7 +35,7 @@ export const knownPrimitiveTypes = {
 
     integers: ['int'],
     strings: ['varchar', 'text', 'decimal'],
-    dates: ['datetime'],
+    dates: ['datetime', 'timestamp'],
     booleans: ['tinyint'],
     floats: ['']
 
