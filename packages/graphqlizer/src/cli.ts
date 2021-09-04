@@ -111,7 +111,7 @@ const options: any = yargs.options({
         demandOption: false,
         default: './graphqlizer.json',
         describe: 'The Config file to use instead of all the other command line options',
-        type: 'boolean'
+        type: 'string'
     },
 
 }).argv;

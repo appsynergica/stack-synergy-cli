@@ -290,8 +290,21 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     importDelcarationClassTransformer,
                                     options);
 
+                            }else if(propPrimitiveInfo.typeName === PrimitiveTypeName.Date) //Date
+                            {
+                                this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
+                                    'IsDate',
+                                    [],
+                                    'Date',
+                                    importDeclarationClassValidator,
+                                    importDeclarationNestGraphQL,
+                                    importDelcarationClassTransformer,
+                                    options);
+
                                 // TODO: Seperate Int from Float
-                            }else if((propType.isNumber() && propPrimitiveInfo.typeName === PrimitiveTypeName.Int) || propPrimitiveInfo.typeName === PrimitiveTypeName.Int) // Int
+                            }
+
+                            else if((propType.isNumber() && propPrimitiveInfo.typeName === PrimitiveTypeName.Int) || propPrimitiveInfo.typeName === PrimitiveTypeName.Int) // Int
                             {
 
                                 this.addPropertyDecorator(destProperty, propType.isNullable() || options.isEverythingOptional,
@@ -314,7 +327,9 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
                                     options);
-                            }else if(propType.isObject()) // Object
+                            }
+
+                            else if(propType.isObject()) // Object
                             {
 
                                 // add custom import
@@ -625,7 +640,7 @@ export class ServerAPIFileGenerator extends FileGenerator
 
                 hasFoundPrimitiveType = this.setPrimitiveType(obj, stringValue);
 
-               // console.log(`String value : ${stringValue} hasFoundPrimitiveType: ${hasFoundPrimitiveType} ${JSON.stringify(obj, null, 2)}`);
+              // console.log(`String value : ${stringValue} hasFoundPrimitiveType: ${hasFoundPrimitiveType} ${JSON.stringify(obj, null, 2)}`);
 
 
               }

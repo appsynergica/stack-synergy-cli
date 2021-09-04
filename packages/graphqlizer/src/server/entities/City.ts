@@ -32,4 +32,18 @@ export class City {
 
   @OneToMany(() => District, (district) => district.city)
   districts: District[];
+
+  @Column("datetime", {
+    name: "date_created",
+    nullable: true,
+    default: () => "CURRENT_TIMESTAMP",
+  })
+  dateCreated: Date | null;
+
+  @Column("datetime", {
+    name: "date_updated",
+    nullable: true,
+    default: () => "CURRENT_TIMESTAMP",
+  })
+  dateUpdated: Date | null;
 }

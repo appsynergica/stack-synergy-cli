@@ -22,4 +22,18 @@ export class Continent {
 
   @OneToMany(() => Country, (country) => country.continent)
   countries: Country[];
+
+  @Column("datetime", {
+    name: "date_created",
+    nullable: true,
+    default: () => "CURRENT_TIMESTAMP",
+  })
+  dateCreated: Date | null;
+
+  @Column("datetime", {
+    name: "date_updated",
+    nullable: true,
+    default: () => "CURRENT_TIMESTAMP",
+  })
+  dateUpdated: Date | null;
 }
