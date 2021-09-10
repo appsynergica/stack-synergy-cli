@@ -10,7 +10,7 @@
 <a href="https://opencollective.com/stack-synergy" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a>
 </span>
 <span class="badge-buymeacoffee">
-<a href="https://buymeacoffee.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
+<a href="https://ko-fi.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
 </span>
 
   
@@ -23,7 +23,7 @@
 ## Installation
 
 ```shell
-npm i @desmondrg/graphqlizer
+npm i @desmondrg/graphqlizer -D
 ```
 
 ## Usage
@@ -94,8 +94,8 @@ graphqlizer
 The following example generates the following entities.
 
  - Typeorm entities with class validator entities and nestjs code first entities. These entities will overwrite the source file
- - entities without any decorators. These entities may be necessary for browser side apps as typeorm decorators are offensive to webpack. These entities will be placed in the file path : "src/core/browser/*.ts"
- - Multiple nestjs code first input type entities in the same file. These entities will have class validator decorators and nestjs code first decorators but no typeorm entities. These entities will all be placed in the same file: "src/core/graphql/*.ts". 
+ - entities without any decorators. These entities may be necessary for browser side apps as typeorm decorators are offensive to webpack. These entities will be placed in the file path : "src/core/browser/entities/*.ts"
+ - Multiple nestjs code first input type entities in the same file. These entities will have class validator decorators and nestjs code first decorators but no typeorm entities. These entities will all be placed in the same file: "src/core/graphql/input/*.ts". 
 
 Note : it is advisable to backup entities before performing this example incase the output turns out not to be satisfactory
 
@@ -237,5 +237,5 @@ e.g of an output path :
 <a href="https://opencollective.com/stack-synergy" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a>
 </span>
 <span class="badge-buymeacoffee">
-<a href="https://buymeacoffee.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
+<a href="https://ko-fi.com/desmondrg" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
 </span>

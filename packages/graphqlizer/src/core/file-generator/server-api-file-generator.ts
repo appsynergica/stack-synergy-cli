@@ -158,6 +158,18 @@ export class ServerAPIFileGenerator extends FileGenerator
 
 
 
+        /// add typeorm class decorators
+        if(options.isToAddTypeOrmDecorators)
+        {
+            sourceClass.getDecorators().forEach(x => {
+
+                // console.log(JSON.stringify(x.getStructure().name, null, 2));
+
+                destinationClass.addDecorator(x.getStructure());
+
+            });
+        }
+
         //add class decortor
 
         if(options.isToAddNestJSGraphQLDecorators)
@@ -348,6 +360,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     importDelcarationClassTransformer,
                                     options,
                                     false,
+                                    false,
                                     true);
                             }
 
@@ -366,7 +379,10 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     importDeclarationClassValidator,
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
-                                    options);
+                                    options,
+                                    false,
+                                    true,
+                                    false);
 
                             }else if(propType.isBoolean())
                             {
@@ -378,7 +394,9 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
                                     options,
-                                    true);
+                                    true,
+                                    true,
+                                    false);
 
                             }else if(propType.isObject()) // Object
                             {
@@ -399,6 +417,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                                     importDeclarationNestGraphQL,
                                     importDelcarationClassTransformer,
                                     options,
+                                    true,
                                     true,
                                     true);
                             }
@@ -491,6 +510,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                          importDeclarationClassTransformer: ImportDeclaration | null,
                          options: IDecoratorOptions,
                          isToAddClassValidatorArrayTag = false,
+                         isPropertyArrayType = false,
                          isPropertyObjectType = false)
     {
 
@@ -572,20 +592,40 @@ export class ServerAPIFileGenerator extends FileGenerator
                 this.addNamedImport(importDeclationNestJS, fieldType);
             }
 
-            if(isNullable) // Nullable
+            if(isPropertyArrayType)
             {
-                this.addDecorator(singProperty,
-                    {
-                    name: "Field",
-                    arguments: [`type => ${fieldType}`, `{nullable: true}`],
-                });
-            }else{ // Not nullable
-                this.addDecorator(singProperty,
-                    {
-                    name: "Field",
-                    arguments: [`type => ${fieldType}`, `{nullable: false}`],
-                });
+                if(isNullable) // Nullable
+                {
+                    this.addDecorator(singProperty,
+                        {
+                            name: "Field",
+                            arguments: [`type => [${fieldType}]`, `{nullable: true}`],
+                        });
+                }else{ // Not nullable
+                    this.addDecorator(singProperty,
+                        {
+                            name: "Field",
+                            arguments: [`type => [${fieldType}]`, `{nullable: false}`],
+                        });
+                }
+
+            }else{ // Not Array Type
+                if(isNullable) // Nullable
+                {
+                    this.addDecorator(singProperty,
+                        {
+                            name: "Field",
+                            arguments: [`type => ${fieldType}`, `{nullable: true}`],
+                        });
+                }else{ // Not nullable
+                    this.addDecorator(singProperty,
+                        {
+                            name: "Field",
+                            arguments: [`type => ${fieldType}`, `{nullable: false}`],
+                        });
+                }
             }
+
         }
     }
 
