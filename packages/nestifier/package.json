@@ -1,6 +1,6 @@
 {
   "name": "@desmondrg/nestifier",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": {
     "name": "Desmond Rgwaringesu",
     "email": "desmondrg@gmail.com"
@@ -9,10 +9,10 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "dev": "ts-node  -r tsconfig-paths/register src/cli.ts -s src/server/entities/*.ts -o src/graphql/entities",
+    "dev": "ts-node  -r tsconfig-paths/register src/cli.ts",
     "build": "ts-node prebuild.ts && tsc --build tsconfig.app.json && tscpaths -p tsconfig.app.json -s ./ -o ../../dist/nestifier",
     "publish:local": "cd ../../dist/nestifier && npm link --force",
-    "publish:global": "yarn run publish:local && cd ../../dist && npm publish",
+    "publish:global": "yarn run publish:local && cd ../../dist/nestifier && npm publish",
     "build-n-publish:local": "yarn run build && yarn run publish:local",
     "build-n-publish:local-n-test": "yarn run build-n-publish:local && yarn run test",
     "test": "nestifier"
@@ -35,11 +35,13 @@
   "bin": "./cli.js",
   "license": "MIT",
   "dependencies": {
-    "@desmondrg/common-cli": "^0.0.9",
+    "@desmondrg/common-cli": "~0.0.10",
     "chalk": "^4.1.1",
     "figlet": "^1.5.0",
+    "inquirer": "^8.2.0",
     "lodash": "^4.17.21",
     "mustache": "^4.2.0",
+    "preserve-case-replace": "^1.0.2",
     "rimraf": "^3.0.2",
     "ts-morph": "^11.0.0",
     "ts-node": "^10.0.0",
@@ -59,8 +61,8 @@
   },
   "funding": [
     {
-      "type" : "patreon",
-      "url" : "https://www.patreon.com/desmondrg"
+      "type": "patreon",
+      "url": "https://www.patreon.com/desmondrg"
     },
     "https://opencollective.com/stack-synergy",
     "https://ko-fi.com/desmondrg"

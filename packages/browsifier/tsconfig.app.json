@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/browsifier",
+    "composite": true,
     "declaration": true,
     "declarationDir": "../../dist/browsifier/types",
     "declarationMap": true,

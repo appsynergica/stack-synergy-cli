@@ -1,13 +1,21 @@
 {
-    "globalOptions": {
-        "sourceFilePathGlob": "src/server/entities/*.ts",
-        "outputRootPath": "src/graphql",
-        "isToSingleQuotes": false,
-        "fileNameType": "k",
-        "indentationText": "two",
-        "lineFeedKind": "n",
-        "isToUseTrailingCommas": false,
-        "isToUsePrefixAndSuffixTextForRename": false
-        },
-    "outputClasses" : []
+    "templateReadRootDir": "server/api/v1",
+    "templateDestRootDir": "./",
+    "templatePrefix": "template",
+    "templateAPIVersion": "v1",
+
+    "apiFileType": {
+        "module": "module",
+        "controller": "controller",
+        "service": "service",
+        "resolver": "resolver",
+        "input": "input"
+    },
+    "apiFileRootPaths": {
+        "module": "server/api",
+        "controller": "server/api",
+        "service": "server/api",
+        "resolver": "server/api",
+        "input": "server/api"
+    }
 }

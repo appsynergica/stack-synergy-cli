@@ -1,6 +1,6 @@
 {
   "name": "@desmondrg/common-cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": {
     "name": "Desmond Rgwaringesu",
     "email": "desmondrg@gmail.com"
@@ -8,7 +8,7 @@
   "repository": "https://github.com/desmondrg/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
-  },                
+  },
   "main": "./src/index.js",
   "types": "types/src/index.d.ts",
   "license": "MIT",
@@ -19,8 +19,7 @@
     "type-check:watch": "npm run type-check -- --watch",
     "dev": "ts-node  -r tsconfig-paths/register src/index.ts -s src/server/entities -o src/browser/entities",
     "build": "ts-node prebuild.ts && tsc --build tsconfig.lib.json",
-    "publish:local": "cd ../../dist/common-cli && npm link --force",
-    "publish:global": "npm run publish:local && cd ../../dist && npm publish --access public",
+    "publish:global": "cd ../../dist/common-cli && npm publish",
     "build-n-publish:local": "npm run build && npm run publish:local",
     "build-n-publish:global": "npm run build && npm run publish:global",
     "build-n-publish:local-n-test": "npm run build-n-publish:local && npm run test",
@@ -31,7 +30,9 @@
   ],
   "dependencies": {
     "chalk": "^4.1.1",
+    "flatted": "^3.2.2",
     "lodash": "^4.17.21",
+    "pluralize": "~8.0.0",
     "rimraf": "^3.0.2",
     "ts-morph": "^11.0.0",
     "ts-node": "^10.0.0",
@@ -50,8 +51,8 @@
   },
   "funding": [
     {
-      "type" : "patreon",
-      "url" : "https://www.patreon.com/desmondrg"
+      "type": "patreon",
+      "url": "https://www.patreon.com/desmondrg"
     },
     "https://opencollective.com/stack-synergy",
     "https://ko-fi.com/desmondrg"

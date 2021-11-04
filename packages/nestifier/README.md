@@ -17,6 +17,8 @@
   
   
 > A Command Line Interface for generating NestJS Feature Modules from a set of templates in a specified folder. The generated NestJS Feature Module folder will contain a service, service.spec, module, controller or controller.spec fully populated with broiler plate code that matches the logic of other similar feature modules located in the application.   
+
+>Note : This CLI is still a beta version
 ## Installation  
   
 ```shell  
@@ -26,7 +28,7 @@ npm i @desmondrg/nestifier -D
 ## Usage  
   
 ```shell script
-nsg 
+nestifier 
 ```  
     
   

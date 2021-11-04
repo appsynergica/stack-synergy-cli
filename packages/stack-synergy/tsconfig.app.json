@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/graphqlizer",
     "declaration": true,
+    "composite": true,
     "declarationDir": "../../dist/graphqlizer/types",
     "declarationMap": true,
     "mapRoot": "../../dist/graphqlizer/maps",
@@ -19,8 +20,8 @@
   ],
   "references": [
     {"path" : "../common-cli/tsconfig.lib.json"},
-    {"path" : "../browsifier/tsconfig.lib.json"},
-    {"path" : "../graphqlizer/tsconfig.lib.json"},
-    {"path" : "../stack-synergy/tsconfig.lib.json"}
+    {"path" : "../browsifier/tsconfig.app.json"},
+    {"path" : "../graphqlizer/tsconfig.app.json"},
+    {"path" : "../stack-synergy/tsconfig.app.json"}
   ]
 }

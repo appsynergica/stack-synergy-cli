@@ -31,7 +31,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@desmondrg/common-cli": "0.0.9",
+    "@desmondrg/common-cli": "~0.0.10",
     "chalk": "^4.1.1",
     "lodash": "^4.17.21",
     "rimraf": "^3.0.2",

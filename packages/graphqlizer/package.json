@@ -1,6 +1,6 @@
 {
   "name": "@desmondrg/graphqlizer",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "author": {
     "name": "Desmond Rgwaringesu",
     "email": "desmondrg@gmail.com"
@@ -12,7 +12,7 @@
     "dev": "ts-node  -r tsconfig-paths/register src/cli.ts -s src/server/entities/*.ts -o src/graphql/entities",
     "build": "ts-node prebuild.ts && tsc --build tsconfig.app.json && tscpaths -p tsconfig.app.json -s ./ -o ../../dist/graphqlizer",
     "publish:local": "cd ../../dist/graphqlizer && npm link --force",
-    "publish:global": "yarn run publish:local && cd ../../dist/graphqlizer && npm publish --access public",
+    "publish:global": "yarn run publish:local && cd ../../dist/graphqlizer && npm publish",
     "build-n-publish:local": "yarn run build && yarn run publish:local",
     "build-n-publish:local-n-test": "yarn run build-n-publish:local && yarn run test",
     "test": "graphqlizer"
@@ -35,7 +35,7 @@
   "bin": "./cli.js",
   "license": "MIT",
   "dependencies": {
-    "@desmondrg/common-cli": "^0.0.9",
+    "@desmondrg/common-cli": "~0.0.10",
     "chalk": "^4.1.1",
     "figlet": "^1.5.0",
     "lodash": "^4.17.21",

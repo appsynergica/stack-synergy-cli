@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import yargs from 'yargs';
-import {logger,FileGenerator, fxnReadJSON} from '@desmondrg/common-cli';
-import {IGraphqlizerConfig} from './core/core-gen';
+import {logger, FileGenerator, fxnReadJSON, FileNameType} from '@desmondrg/common-cli';
+import {GraphQLObjectType, IGraphqlizerConfig} from './core/core-gen';
 import {ServerAPIFileGenerator} from './core/file-generator/server-api-file-generator';
 logger.context = 'graphqlizer';
 
@@ -113,6 +113,15 @@ const options: any = yargs.options({
         describe: 'The Config file to use instead of all the other command line options',
         type: 'string'
     },
+    Z:{
+        alias: 'primitiveID',
+        demandOption: true,
+        default: false,
+        describe: 'Whether to use String or Int as the graphql scalar type instead of ID',
+        type: 'boolean'
+    }
+
+
 
 }).argv;
 
@@ -128,25 +137,26 @@ if(options.project)
 
             // Graphqlizer Options : Base Class Options
             globalOptions: {
-                sourceFilePathGlob: options.source,
-                outputRootPath: options.output,
+                sourceFilePathGlob: options.source as string,
+                outputRootPath: options.output as string,
                 isToSingleQuotes: options.quote as boolean,
-                fileNameType: options.name,
-                indentationText: options.indent,
-                lineFeedKind: options.feed,
-                isToUseTrailingCommas: options.comma,
-                isToUsePrefixAndSuffixTextForRename: options.prefix,
+                fileNameType: options.name as FileNameType,
+                indentationText: options.indent as string,
+                lineFeedKind: options.feed as string,
+                isToUseTrailingCommas: options.comma as boolean,
+                isToUsePrefixAndSuffixTextForRename: options.prefix as boolean,
             },
             outputClasses: [
                 {
                     className: "{{sourceClassName}}",
-                    graphqlObjectType: options.object,
+                    graphqlObjectType: options.objectType as GraphQLObjectType,
                     filePath: `{{outputRootPath}}/{{sourceClassName}}.ts`,
-                    isEverythingOptional: options.optional,
-                    isToAddClassValidatorDecorators: options.validator,
-                    isToAddNestJSGraphQLDecorators: options.graphql,
-                    isToAddTypeOrmDecorators: options.typeorm,
-                    hasNoProperties: options.nop
+                    isEverythingOptional: options.optional as boolean,
+                    isToUsePrimitiveScalarForID: options.primitiveID as boolean,
+                    isToAddClassValidatorDecorators: options.validator as boolean,
+                    isToAddNestJSGraphQLDecorators: options.graphql as boolean,
+                    isToAddTypeOrmDecorators: options.typeorm as boolean,
+                    hasNoProperties: options.nop as boolean,
                 }
             ]
 

@@ -15,6 +15,7 @@
             "graphqlObjectType": "o",
             "filePath": "{{outputRootPath}}/graphql/objects/{{sourceClassName}}.ts",
             "isEverythingOptional": false,
+            "isToUsePrimitiveScalarForID": true,
             "isToAddClassValidatorDecorators": true,
             "isToAddNestJSGraphQLDecorators": true,
             "isToAddTypeOrmDecorators": true
@@ -24,6 +25,7 @@
             "graphqlObjectType": "o",
             "filePath": "{{outputRootPath}}/browser/{{sourceClassName}}.ts",
             "isEverythingOptional": false,
+            "isToUsePrimitiveScalarForID": true,
             "isToAddClassValidatorDecorators": false,
             "isToAddNestJSGraphQLDecorators": false,
             "isToAddTypeOrmDecorators": false
@@ -33,6 +35,7 @@
             "graphqlObjectType": "i",
             "filePath": "{{outputRootPath}}/graphql/input/{{sourceClassName}}.input.ts",
             "isEverythingOptional": true,
+            "isToUsePrimitiveScalarForID": true,
             "isToAddClassValidatorDecorators": true,
             "isToAddNestJSGraphQLDecorators": true,
             "isToAddTypeOrmDecorators": false,
@@ -43,6 +46,7 @@
             "graphqlObjectType": "i",
             "filePath": "{{outputRootPath}}/graphql/input/{{sourceClassName}}.input.ts",
             "isEverythingOptional": false,
+            "isToUsePrimitiveScalarForID": true,
             "isToAddClassValidatorDecorators": true,
             "isToAddNestJSGraphQLDecorators": true,
             "isToAddTypeOrmDecorators": false
@@ -52,6 +56,7 @@
             "graphqlObjectType": "i",
             "filePath": "{{outputRootPath}}/graphql/input/{{sourceClassName}}.input.ts",
             "isEverythingOptional": true,
+            "isToUsePrimitiveScalarForID": true,
             "isToAddClassValidatorDecorators": true,
             "isToAddNestJSGraphQLDecorators": true,
             "isToAddTypeOrmDecorators": false

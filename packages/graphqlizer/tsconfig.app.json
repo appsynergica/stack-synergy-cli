@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/graphqlizer",
+    "composite": true,
     "declaration": true,
     "declarationDir": "../../dist/graphqlizer/types",
     "declarationMap": true,

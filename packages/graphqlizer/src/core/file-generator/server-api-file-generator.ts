@@ -17,7 +17,7 @@ import {
 import Mustache from 'mustache';
 import _ from 'lodash';
 import {FileGenerator, logger} from '@desmondrg/common-cli';
-logger.context = 'Graphqlizer';
+logger.context = 'Graphqlizer+';
 
 // disable html escaping for Mustache
 Mustache.escape = (value) => value;
@@ -240,11 +240,19 @@ export class ServerAPIFileGenerator extends FileGenerator
                     // TODO: Confirm whether MongoDB ObjectIDs are ALWAYS numberic & fix the if else logic accordingly
                     if(singSourceDecorator.getName() === 'PrimaryGeneratedColumn' || singSourceDecorator.getName() === 'PrimaryColumn' || singSourceDecorator.getName() === 'ObjectIdColumn') // PRIMARY
                     {
+                        let fieldType = 'ID';
+
+                        if(options?.isToUsePrimitiveScalarForID)
+                        {
+                            fieldType = propType.isString() ? 'String' : 'Int';
+                        }
+
+
                         this.addPropertyDecorator(destProperty,
                             false,
                             propType.isString() ? 'IsString' : 'IsInt',
                             [],
-                            'ID',
+                            fieldType,
                             importDeclarationClassValidator,
                             importDeclarationNestGraphQL,
                             importDelcarationClassTransformer,

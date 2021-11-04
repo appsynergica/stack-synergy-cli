@@ -222,7 +222,7 @@ e.g of an output path :
  -  "isToAddClassValidatorDecorators":  A boolean for whether to add class validator options or not,  
   - "isToAddNestJSGraphQLDecorators": A boolean of whether to add nestjs graphql decorators or not,  
   -"isToAddTypeOrmDecorators": A boolean of whether to add typeorm decorators or not
-
+  -"isToUsePrimitiveScalarForID" : A boolean of whether to use String or Int as the Graphql Scalar type instead of ID. This option is only applicable when the "isToAddNestJSGraphQLDecorators" option is set to true. Note: "isToUsePrimitiveScalarForID" is an optional key in the Entity Generation Option json object.
 
 
 
