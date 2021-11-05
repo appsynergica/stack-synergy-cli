@@ -9,7 +9,7 @@ import { Country } from "./Country";
 
 @Index("slug_UNIQUE", ["code"], { unique: true })
 @Index("name_UNIQUE", ["name"], { unique: true })
-@Entity("continent", { schema: "heroku_fb350fee95a093c" })
+@Entity("continent", { schema: "urbanshona_store" })
 export class Continent {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
@@ -19,9 +19,6 @@ export class Continent {
 
   @Column("varchar", { name: "name", nullable: true, unique: true, length: 45 })
   name: string | null;
-
-  @OneToMany(() => Country, (country) => country.continent)
-  countries: Country[];
 
   @Column("datetime", {
     name: "date_created",
@@ -36,4 +33,7 @@ export class Continent {
     default: () => "CURRENT_TIMESTAMP",
   })
   dateUpdated: Date | null;
+
+  @OneToMany(() => Country, (country) => country.continent)
+  countries: Country[];
 }

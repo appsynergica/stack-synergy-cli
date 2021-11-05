@@ -11,8 +11,8 @@ import { City } from "./City";
 import { Country } from "./Country";
 
 @Index("slug_UNIQUE", ["name"], { unique: true })
-@Index("fk_province_country1_idx", ["countryId"], {})
-@Entity("province", { schema: "heroku_fb350fee95a093c" })
+@Index("fk_state_country1_idx", ["countryId"], {})
+@Entity("province", { schema: "urbanshona_store" })
 export class Province {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
@@ -20,11 +20,25 @@ export class Province {
   @Column("varchar", { name: "name", unique: true, length: 45 })
   name: string;
 
-  @Column("varchar", { name: "postal_code", nullable: true, length: 45 })
-  postalCode: string | null;
+  @Column("varchar", { name: "postalcode", nullable: true, length: 45 })
+  postalcode: string | null;
 
   @Column("int", { name: "country_id" })
   countryId: number;
+
+  @Column("datetime", {
+    name: "date_created",
+    nullable: true,
+    default: () => "CURRENT_TIMESTAMP",
+  })
+  dateCreated: Date | null;
+
+  @Column("datetime", {
+    name: "date_updated",
+    nullable: true,
+    default: () => "CURRENT_TIMESTAMP",
+  })
+  dateUpdated: Date | null;
 
   @OneToMany(() => City, (city) => city.province)
   cities: City[];

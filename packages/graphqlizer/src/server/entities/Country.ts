@@ -13,7 +13,7 @@ import { Province } from "./Province";
 @Index("slug_UNIQUE", ["code"], { unique: true })
 @Index("name_UNIQUE", ["name"], { unique: true })
 @Index("fk_country_continent1_idx", ["continentId"], {})
-@Entity("country", { schema: "heroku_fb350fee95a093c" })
+@Entity("country", { schema: "urbanshona_store" })
 export class Country {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
@@ -26,16 +26,6 @@ export class Country {
 
   @Column("varchar", { name: "name", nullable: true, unique: true, length: 45 })
   name: string | null;
-
-  @ManyToOne(() => Continent, (continent) => continent.countries, {
-    onDelete: "NO ACTION",
-    onUpdate: "NO ACTION",
-  })
-  @JoinColumn([{ name: "continent_id", referencedColumnName: "id" }])
-  continent: Continent;
-
-  @OneToMany(() => Province, (province) => province.country)
-  provinces: Province[];
 
   @Column("datetime", {
     name: "date_created",
@@ -50,4 +40,14 @@ export class Country {
     default: () => "CURRENT_TIMESTAMP",
   })
   dateUpdated: Date | null;
+
+  @ManyToOne(() => Continent, (continent) => continent.countries, {
+    onDelete: "NO ACTION",
+    onUpdate: "NO ACTION",
+  })
+  @JoinColumn([{ name: "continent_id", referencedColumnName: "id" }])
+  continent: Continent;
+
+  @OneToMany(() => Province, (province) => province.country)
+  provinces: Province[];
 }
