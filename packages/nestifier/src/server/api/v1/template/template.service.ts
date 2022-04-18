@@ -1,10 +1,10 @@
 import {Injectable, Logger} from '@nestjs/common';
 import {DeepPartial, Repository} from 'typeorm';
 import {ObjectSchema, SchemaMap} from 'joi';
-import {AppRequestOrigin} from '@desmondrg/cornerstone-node';
-import {AppDao, AppSchemaType, AppSchemaValidationType, IJoinRelation} from '@desmondrg/filebase-node';
-import {AppSearchOptions} from '@desmondrg/cornerstone-node';
-import {fxnPrettyJsonApi} from '@desmondrg/cornerstone-node';
+import {AppRequestOrigin} from '@appsynergica/cornerstone-node';
+import {AppDao, AppSchemaType, AppSchemaValidationType, IJoinRelation} from '@appsynergica/filebase-node';
+import {AppSearchOptions} from '@appsynergica/cornerstone-node';
+import {fxnPrettyJsonApi} from '@appsynergica/cornerstone-node';
 import _ from 'lodash';
 import Joi from 'joi';
 import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity';

@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/nestifier",
-    "declaration": true,
     "composite": true,
+    "declaration": true,
     "declarationDir": "../../dist/nestifier/types",
     "declarationMap": true,
     "mapRoot": "../../dist/nestifier/maps",

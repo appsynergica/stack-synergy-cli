@@ -26,9 +26,9 @@ Do you need to generate Entities / classes without TypeORM decorators for use on
 #### Installation
 ```console
 
-npm i @desmondrg/browsifier
+npm i @appsynergica/browsifier
 
 ```
-[StackSynergyCLI]: https://github.com/desmondrg/stack-synergy-cli
-[Browsifier]: https://github.com/desmondrg/stack-synergy-cli/tree/master/packages/browsifier
-[BrowsifierNpm]: https://www.npmjs.com/package/@desmondrg/browsifier
+[StackSynergyCLI]: https://github.com/appsynergica/stack-synergy-cli
+[Browsifier]: https://github.com/appsynergica/stack-synergy-cli/tree/master/packages/browsifier
+[BrowsifierNpm]: https://www.npmjs.com/package/@appsynergica/browsifier

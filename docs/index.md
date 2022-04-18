@@ -53,20 +53,20 @@ pagination:
 </span>      
             
             
-![GitHub stars](https://img.shields.io/github/stars/desmondrg/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/desmondrg/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/desmondrg/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/desmondrg?style=social)            
+![GitHub stars](https://img.shields.io/github/stars/appsynergica/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/appsynergica/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/appsynergica/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/appsynergica?style=social)            
             
               
 Stack Synergy CLI is a mono-repository of tools that aim to stream line the process of creating MEAN Stack / MyEAN Stack Web Applications. The repository contains the following tools:        
               
-- [Browsifier](https://github.com/desmondrg/stack-synergy-cli/tree/master/packages/browsifier) :  A Command Line Application for generating Typescript classes without decorators from TypeORM Entity definitions. This solves a problem where TypeORM Entities cannot be imported into browser apps Like Angular Applications because they use webpack which bundles things and TypeORM doesn't work well with bundling.          
+- [Browsifier](https://github.com/appsynergica/stack-synergy-cli/tree/master/packages/browsifier) :  A Command Line Application for generating Typescript classes without decorators from TypeORM Entity definitions. This solves a problem where TypeORM Entities cannot be imported into browser apps Like Angular Applications because they use webpack which bundles things and TypeORM doesn't work well with bundling.          
           
-- [Graphqlizer](https://github.com/desmondrg/stack-synergy-cli/tree/master/packages/graphqlizer) : A Command Line App for adding "code first" nestjs graphql decorators and or class validator decorators to TypeORM entities.             
+- [Graphqlizer](https://github.com/appsynergica/stack-synergy-cli/tree/master/packages/graphqlizer) : A Command Line App for adding "code first" nestjs graphql decorators and or class validator decorators to TypeORM entities.             
            
-- [Nestifier](https://github.com/desmondrg/stack-synergy-cli/tree/master/packages/nestifier): A Command Line Interface for generating NestJS Feature Modules from a set of templates in a specified folder. The generated NestJS Feature Module folder will contain a service, service.spec, module, controller or controller.spec fully populated with broiler plate code that matches the logic of other similar feature modules located in the application.            
+- [Nestifier](https://github.com/appsynergica/stack-synergy-cli/tree/master/packages/nestifier): A Command Line Interface for generating NestJS Feature Modules from a set of templates in a specified folder. The generated NestJS Feature Module folder will contain a service, service.spec, module, controller or controller.spec fully populated with broiler plate code that matches the logic of other similar feature modules located in the application.            
           
-- [Stack Synergy](https://github.com/desmondrg/stack-synergy-cli/tree/master/packages/stack-synergy): A Command Line Interface that combines all the other tools above and adds a console GUI enquirer prompt for a more seamless programming experience          
+- [Stack Synergy](https://github.com/appsynergica/stack-synergy-cli/tree/master/packages/stack-synergy): A Command Line Interface that combines all the other tools above and adds a console GUI enquirer prompt for a more seamless programming experience          
     
- ![GitHub repo size](https://img.shields.io/github/repo-size/desmondrg/stack-synergy-cli?style=plastic) ![GitHub language count](https://img.shields.io/github/languages/count/desmondrg/stack-synergy-cli?style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/desmondrg/stack-synergy-cli?style=plastic) ![GitHub last commit](https://img.shields.io/github/last-commit/desmondrg/stack-synergy-cli?color=red&style=plastic)            
+ ![GitHub repo size](https://img.shields.io/github/repo-size/appsynergica/stack-synergy-cli?style=plastic) ![GitHub language count](https://img.shields.io/github/languages/count/desmondrg/stack-synergy-cli?style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/desmondrg/stack-synergy-cli?style=plastic) ![GitHub last commit](https://img.shields.io/github/last-commit/desmondrg/stack-synergy-cli?color=red&style=plastic)            
             
             
 <p>            

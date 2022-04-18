@@ -17,13 +17,13 @@
     "baseUrl": "./",
     "types": ["node"],
     "paths": {
-      "@desmondrg/common-cli": [
+      "@appsynergica/common-cli": [
         "packages/common-cli/src/index.ts"
       ],
-      "@desmondrg/browsifier": [
+      "@appsynergica/browsifier": [
         "packages/browsifier/src/index.ts"
       ],
-      "@desmondrg/graphqlizer": [
+      "@appsynergica/graphqlizer": [
         "packages/graphqlizer/src/index.ts"
       ]
     }

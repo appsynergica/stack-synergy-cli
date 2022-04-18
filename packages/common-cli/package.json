@@ -1,11 +1,11 @@
 {
-  "name": "@desmondrg/common-cli",
-  "version": "0.0.10",
+  "name": "@appsynergica/common-cli",
+  "version": "0.0.11",
   "author": {
     "name": "Desmond Rgwaringesu",
-    "email": "desmondrg@gmail.com"
+    "email": "desmondrg@appsynergica.com"
   },
-  "repository": "https://github.com/desmondrg/stack-synergy-cli.git",
+  "repository": "https://github.com/appsynergica/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },

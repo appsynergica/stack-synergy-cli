@@ -1,7 +1,7 @@
 import {Controller, Delete, Get, Next, Post, Put, Req, Res, UseGuards} from '@nestjs/common';
-import {AppController, AppSchemaType} from '@desmondrg/filebase-node';
+import {AppController, AppSchemaType} from '@appsynergica/filebase-node';
 import {Template} from '@server-entities/Template';
-import {AppSearchOptions} from '@desmondrg/cornerstone-node';
+import {AppSearchOptions} from '@appsynergica/cornerstone-node';
 import {RoleType, AppResourceType} from '@app-dynamic';
 import {TemplateService} from '@server/api/v1/template/template.service';
 import {NextFunction, Request, Response} from 'express';

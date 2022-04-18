@@ -1,4 +1,4 @@
-import {IFileGeneratorOptions} from '@desmondrg/common-cli';
+import {IFileGeneratorOptions} from '@appsynergica/common-cli';
 
 
 export enum GraphQLObjectType {

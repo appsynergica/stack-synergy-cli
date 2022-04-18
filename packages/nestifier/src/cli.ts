@@ -1,15 +1,13 @@
 #!/usr/bin/env node
 // import 'module-alias/register';
-import {logger} from '@desmondrg/common-cli';
+import {fxnReadJSON, logger} from '@appsynergica/common-cli';
 import chalk from 'chalk';
 import figlet from 'figlet';
 import inquirer from 'inquirer';
 import {AppFileGenerator} from './core/file-generators/app-file-generator';
-import {
-    ApiFilePresetType,
-    ApiFileRootPath,
-    ApiFileType
+import { NestifierConfig
 } from './core/app-core/app-core';
+import * as path from "path";
 
 logger.context = 'Generator';
 
@@ -17,9 +15,10 @@ logger.context = 'Generator';
 
 
 
+const nestierConfig: NestifierConfig = fxnReadJSON(path.join(process.cwd(), 'nestifier.json'), false);
 
 
-const apiFileGenerator = new AppFileGenerator('API', ApiFileRootPath, ApiFileType, ApiFilePresetType, true);
+const apiFileGenerator = new AppFileGenerator('API', nestierConfig.apiFileRootPaths, nestierConfig.apiFileType, nestierConfig.apiFilePresets, true);
 // const coreFileGenerator = new AppFileGenerator('Core', CoreFileRootPath, CoreFileType, CoreFilePresetType, false);
 // const serverFileGenerator = new AppFileGenerator('Shared', SharedFileRootPath, SharedFileType, SharedFilePresetType, false);
 

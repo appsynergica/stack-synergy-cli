@@ -4,13 +4,13 @@
             # Use weight here and in your pages to define the order of links.
 
 - title: "Stack Synergy CLI"
-  url: "https://desmondrg.github.com/stack-synergy-cli"
+  url: "https://appsynergica.github.com/stack-synergy-cli"
   tab: true # Opens this link in a new tab.
   id: external # Will be used as a parent item so we can created child links.
   weight: 999 # Ensures these links appear below all the other links.
 
 - title: "Urbanshona Tech on GitHub"
-  url: "https://github.com/desmondrg"
+  url: "https://github.com/appsynergica"
   tab: true
   parent: external
 

@@ -1,28 +1,28 @@
 {
-  "name": "@desmondrg/stack-synergy-cli",
+  "name": "@appsynergica/stack-synergy-cli",
   "version": "0.0.1",
   "private": true,
   "author": {
     "name": "Desmond Rgwaringesu",
-    "email": "desmondrg@gmail.com"
+    "email": "desmondrg@appsynergica.com"
   },
   "description": "Stack Synergy CLI is a mono-repository of tools that stream line the process of creating MyEAN Stack Web Applications",
   "scripts": {
     "debug-repo": "tsc --project tsconfig.json",
     "build-repo": "y run build",
-    "build-common-cli": "yarn workspace @desmondrg/common-cli build",
-    "build-browsifier": "yarn workspace @desmondrg/browsifier build",
-    "build-graphqlizer": "yarn workspace @desmondrg/graphqlizer build",
-    "build-nestifier": "yarn workspace @desmondrg/nestifier build",
-    "publish-browsifier:local": "yarn workspace @desmondrg/browsifier publish:local",
-    "publish-browsifier:global": "yarn workspace @desmondrg/browsifier publish:global",
-    "publish-graphqlizer:local": "yarn workspace @desmondrg/graphqlizer publish:local",
-    "publish-graphqlizer:global": "yarn workspace @desmondrg/graphqlizer publish:global",
-    "publish-nestifier:global": "yarn workspace @desmondrg/nestifier publish:global",
-    "publish-common-cli": "yarn workspace @desmondrg/common-cli publish:global",
-    "dev-browsifier": "yarn workspace @desmondrg/browsifier dev",
-    "dev-graphqlizer": "yarn workspace @desmondrg/graphqlizer dev",
-    "dev-nestifier": "yarn workspace @desmondrg/nestifier dev",
+    "build-common-cli": "yarn workspace @appsynergica/common-cli build",
+    "build-browsifier": "yarn workspace @appsynergica/browsifier build",
+    "build-graphqlizer": "yarn workspace @appsynergica/graphqlizer build",
+    "build-nestifier": "yarn workspace @appsynergica/nestifier build",
+    "publish-browsifier:local": "yarn workspace @appsynergica/browsifier publish:local",
+    "publish-browsifier:global": "yarn workspace @appsynergica/browsifier publish:global",
+    "publish-graphqlizer:local": "yarn workspace @appsynergica/graphqlizer publish:local",
+    "publish-graphqlizer:global": "yarn workspace @appsynergica/graphqlizer publish:global",
+    "publish-nestifier:global": "yarn workspace @appsynergica/nestifier publish:global",
+    "publish-common-cli": "yarn workspace @appsynergica/common-cli publish:global",
+    "dev-browsifier": "yarn workspace @appsynergica/browsifier dev",
+    "dev-graphqlizer": "yarn workspace @appsynergica/graphqlizer dev",
+    "dev-nestifier": "yarn workspace @appsynergica/nestifier dev",
     "test-browsifier": "browsifier -s packages/browsifier/src/server/entities -o packages/browsifier/src/browser/entities -q true",
     "test-graphqlizer": "graphqlizer -s packages/graphqlizer/src/server/entities/*.ts -o packages/graphqlizer/src/browser/entities"
   },
@@ -47,7 +47,7 @@
     "generate nestjs files from template",
     "scaffold full stack nestjs and angular project"
   ],
-  "repository": "https://github.com/desmondrg/stack-synergy-cli.git",
+  "repository": "https://github.com/appsynergica/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },

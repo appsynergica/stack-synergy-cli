@@ -1,9 +1,9 @@
 {
-  "name": "@desmondrg/browsifier",
-  "version": "0.0.9",
+  "name": "@appsynergica/browsifier",
+  "version": "0.0.10",
   "author": {
     "name": "Desmond Rgwaringesu",
-    "email": "desmondrg@gmail.com"
+    "email": "desmondrg@appsynergica.com"
   },
   "description": "A Command Line App for generating Typescript classes without decorators from TypeORM Entity Definitions.",
   "scripts": {
@@ -20,7 +20,7 @@
     "remove decorators",
     "remove decorators from TypeORM Entities"
   ],
-  "repository": "https://github.com/desmondrg/stack-synergy-cli.git",
+  "repository": "https://github.com/appsynergica/stack-synergy-cli.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -31,7 +31,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@desmondrg/common-cli": "~0.0.10",
+    "@appsynergica/common-cli": "~0.0.10",
     "chalk": "~4.1.1",
     "lodash": "~4.17.21",
     "rimraf": "~3.0.2",

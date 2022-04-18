@@ -1,11 +1,11 @@
 import * as _ from 'lodash';
 import fs from 'fs';
-import {NameMaven, logger, spinner, fxnPrettyJsonApi, fxnReadJSON} from '@desmondrg/common-cli';
+import {NameMaven, logger, spinner, fxnPrettyJsonApi, fxnReadJSON} from '@appsynergica/common-cli';
 import chalk from 'chalk';
 import replace from 'preserve-case-replace';
 import path from 'path';
 import inquirer from 'inquirer';
-import {AppFileMaven} from './app-file-maven';
+import {AppFileMaven} from "./app-file-maven";
 logger.context = 'Generator';
 enum AppFileGenerationMode
 {
@@ -13,15 +13,6 @@ enum AppFileGenerationMode
     templateGeneration = 'Generate file from Template'
 }
 
-// export interface NestifierConfig
-// {
-//      templateReadRootDir: string;
-//      templateDestRootDir: string;
-//      templatePrefix: string;
-//      templateAPIVersion: string;
-// }
-//
-// const nestierConfig: NestifierConfig = fxnReadJSON('nestifier.json', false);
 
 export class AppFileGenerator<TFileType extends string,
                               TFileRootPath extends string,

@@ -1,5 +1,5 @@
 import {ClassDeclaration, SourceFile} from 'ts-morph';
-import {logger, FileGenerator, IFileGeneratorOptions} from '@desmondrg/common-cli';
+import {logger, FileGenerator, IFileGeneratorOptions} from '@appsynergica/common-cli';
 
 logger.context = 'Browsifier';
 

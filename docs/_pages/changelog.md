@@ -48,6 +48,6 @@ version released to date for the Stack Synergy CLI Project.
 [jekyll-v3]: https://github.com/justinhartman/jekyll-heroku-starter-kit/tree/jekyll-v3
 [mdl]: https://getmdl.io/
 
-[BrowsifierGit]: https://github.com/desmondrg/stack-synergy-cli/tree/master/packages/browsifier
-[GraphqlizerGit]: https://github.com/desmondrg/stack-synergy-cli/tree/master/packages/graphqlizer
+[BrowsifierGit]: https://github.com/appsynergica/stack-synergy-cli/tree/master/packages/browsifier
+[GraphqlizerGit]: https://github.com/appsynergica/stack-synergy-cli/tree/master/packages/graphqlizer
 [ClassValidatorNpm]: https://www.npmjs.com/package/class-validator

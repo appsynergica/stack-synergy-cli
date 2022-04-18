@@ -15,7 +15,7 @@
 
   
 
-![GitHub stars](https://img.shields.io/github/stars/desmondrg/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/desmondrg/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/desmondrg/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/desmondrg?style=social)
+![GitHub stars](https://img.shields.io/github/stars/appsynergica/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/appsynergica/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/appsynergica/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/desmondrg?style=social)
 
 
 > A Command Line App for adding "code first" nestjs graphql decorators and or class validator decorators to TypeORM entities. 
@@ -23,7 +23,7 @@
 ## Installation
 
 ```shell
-npm i @desmondrg/graphqlizer -D
+npm i @appsynergica/graphqlizer -D
 ```
 
 ## Usage

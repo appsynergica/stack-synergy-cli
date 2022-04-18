@@ -1,4 +1,4 @@
-import {NameMaven} from '@desmondrg/common-cli';
+import {NameMaven} from '@appsynergica/common-cli';
 
 export enum AppFileType
 {
@@ -94,5 +94,37 @@ export class FileGeneratorNameMaven extends NameMaven
   constructor(public fileType: AppFileType, public fileNamePrefix: string)
   {
     super(fileType, fileNamePrefix);
+  }
+}
+
+export interface NestifierConfig {
+  "templateReadRootDir": string,
+  "templateDestRootDir": string,
+  "templatePrefix": string,
+  "templateAPIVersion": string,
+
+  "apiFileType": {
+    "module": string,
+    "controller": string,
+    "service": string,
+    "resolver": string,
+    "input": string
+  },
+  "apiFileRootPaths": {
+    "module": string,
+    "controller": string,
+    "service": string,
+    "resolver": string,
+    "input": string
+  },
+  "apiFilePresets": {
+    "user": string,
+    "role": string,
+    "address": string,
+    "continent": string,
+    "province": string,
+    "country": string,
+    "city": string,
+    "district": string
   }
 }

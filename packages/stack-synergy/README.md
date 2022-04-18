@@ -20,7 +20,7 @@
 ## Installation  
   
 ```shell script
-npm i @desmondrg/stack-synergy  
+npm i @appsynergica/stack-synergy  
 ```  
   
 ## Usage  

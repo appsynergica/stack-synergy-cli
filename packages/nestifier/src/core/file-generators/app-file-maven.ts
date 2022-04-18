@@ -1,5 +1,5 @@
 import fs from 'fs';
-import {Maven} from '@desmondrg/common-cli';
+import {Maven} from '@appsynergica/common-cli';
 
 export class AppFileMaven<TFileType extends string, TFileRootType extends string> extends Maven
 {

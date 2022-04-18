@@ -16,7 +16,7 @@ import {
 } from 'ts-morph';
 import Mustache from 'mustache';
 import _ from 'lodash';
-import {FileGenerator, logger} from '@desmondrg/common-cli';
+import {FileGenerator, logger} from '@appsynergica/common-cli';
 logger.context = 'StackSynergy';
 
 // disable html escaping for Mustache

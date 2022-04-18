@@ -11,7 +11,7 @@
 </span>
     
 
-![GitHub stars](https://img.shields.io/github/stars/desmondrg/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/desmondrg/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/desmondrg/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/desmondrg?style=social)
+![GitHub stars](https://img.shields.io/github/stars/appsynergica/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/appsynergica/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/appsynergica/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/desmondrg?style=social)
 
 
 > A Command Line Application for generating Typescript classes without decorators from TypeORM Entity definitions. 
@@ -20,7 +20,7 @@
 ## Installation
 
 ```shell
-npm i @desmondrg/browsifier -D
+npm i @appsynergica/browsifier -D
 ```
 
 ## Usage

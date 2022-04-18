@@ -13,7 +13,7 @@
   
     
   
-![GitHub stars](https://img.shields.io/github/stars/desmondrg/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/desmondrg/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/desmondrg/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/desmondrg?style=social)  
+![GitHub stars](https://img.shields.io/github/stars/appsynergica/stack-synergy-cli?style=social) ![GitHub forks](https://img.shields.io/github/forks/appsynergica/stack-synergy-cli?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/appsynergica/stack-synergy-cli?style=social)          ![GitHub followers](https://img.shields.io/github/followers/desmondrg?style=social)  
   
   
 > A Command Line Interface for generating NestJS Feature Modules from a set of templates in a specified folder. The generated NestJS Feature Module folder will contain a service, service.spec, module, controller or controller.spec fully populated with broiler plate code that matches the logic of other similar feature modules located in the application.   
@@ -22,7 +22,7 @@
 ## Installation  
   
 ```shell  
-npm i @desmondrg/nestifier -D
+npm i @appsynergica/nestifier -D
 ```  
   
 ## Usage  
